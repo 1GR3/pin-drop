@@ -1,0 +1,740 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #111726;
+}
+
+body .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body .container svg {
+    width: 100vmin;
+    height: 100vmin;
+    fill: orange;
+}
+
+.line-group-0 circle {
+    fill: aqua;
+}
+
+.line-group-1 circle {
+    fill: #00fcff;
+}
+
+.line-group-2 circle {
+    fill: #00f9ff;
+}
+
+.line-group-3 circle {
+    fill: #00f7ff;
+}
+
+.line-group-4 circle {
+    fill: #00f4ff;
+}
+
+.line-group-5 circle {
+    fill: #00f1ff;
+}
+
+.line-group-6 circle {
+    fill: #00eeff;
+}
+
+.line-group-7 circle {
+    fill: #00ebff;
+}
+
+.line-group-8 circle {
+    fill: #00e8ff;
+}
+
+.line-group-9 circle {
+    fill: #00e6ff;
+}
+
+.line-group-10 circle {
+    fill: #00e3ff;
+}
+
+.line-group-11 circle {
+    fill: #00e0ff;
+}
+
+.line-group-12 circle {
+    fill: #00ddff;
+}
+
+.line-group-13 circle {
+    fill: #00daff;
+}
+
+.line-group-14 circle {
+    fill: #00d7ff;
+}
+
+.line-group-15 circle {
+    fill: #00d5ff;
+}
+
+.line-group-16 circle {
+    fill: #00d2ff;
+}
+
+.line-group-17 circle {
+    fill: #00cfff;
+}
+
+.line-group-18 circle {
+    fill: #00ccff;
+}
+
+.line-group-19 circle {
+    fill: #00c9ff;
+}
+
+.line-group-20 circle {
+    fill: #00c6ff;
+}
+
+.line-group-21 circle {
+    fill: #00c4ff;
+}
+
+.line-group-22 circle {
+    fill: #00c1ff;
+}
+
+.line-group-23 circle {
+    fill: #00beff;
+}
+
+.line-group-24 circle {
+    fill: #00bbff;
+}
+
+.line-group-25 circle {
+    fill: #00b8ff;
+}
+
+.line-group-26 circle {
+    fill: #00b5ff;
+}
+
+.line-group-27 circle {
+    fill: #00b3ff;
+}
+
+.line-group-28 circle {
+    fill: #00b0ff;
+}
+
+.line-group-29 circle {
+    fill: #00adff;
+}
+
+.line-group-30 circle {
+    fill: #00aaff;
+}
+
+.line-group-31 circle {
+    fill: #00a7ff;
+}
+
+.line-group-32 circle {
+    fill: #00a4ff;
+}
+
+.line-group-33 circle {
+    fill: #00a2ff;
+}
+
+.line-group-34 circle {
+    fill: #009fff;
+}
+
+.line-group-35 circle {
+    fill: #009cff;
+}
+
+.line-group-36 circle {
+    fill: #0099ff;
+}
+
+.line-group-37 circle {
+    fill: #0096ff;
+}
+
+.line-group-38 circle {
+    fill: #0093ff;
+}
+
+.line-group-39 circle {
+    fill: #0091ff;
+}
+
+.line-group-40 circle {
+    fill: #008eff;
+}
+
+.line-group-41 circle {
+    fill: #008bff;
+}
+
+.line-group-42 circle {
+    fill: #0088ff;
+}
+
+.line-group-43 circle {
+    fill: #0085ff;
+}
+
+.line-group-44 circle {
+    fill: #0082ff;
+}
+
+.line-group-45 circle {
+    fill: #0080ff;
+}
+
+.line-group-46 circle {
+    fill: #007dff;
+}
+
+.line-group-47 circle {
+    fill: #007aff;
+}
+
+.line-group-48 circle {
+    fill: #0077ff;
+}
+
+.line-group-49 circle {
+    fill: #0074ff;
+}
+
+.line-group-50 circle {
+    fill: #0071ff;
+}
+
+.line-group-51 circle {
+    fill: #006fff;
+}
+
+.line-group-52 circle {
+    fill: #006cff;
+}
+
+.line-group-53 circle {
+    fill: #0069ff;
+}
+
+.line-group-54 circle {
+    fill: #0066ff;
+}
+
+.line-group-55 circle {
+    fill: #0063ff;
+}
+
+.line-group-56 circle {
+    fill: #0060ff;
+}
+
+.line-group-57 circle {
+    fill: #005eff;
+}
+
+.line-group-58 circle {
+    fill: #005bff;
+}
+
+.line-group-59 circle {
+    fill: #0058ff;
+}
+
+.line-group-60 circle {
+    fill: #0055ff;
+}
+
+.line-group-61 circle {
+    fill: #0052ff;
+}
+
+.line-group-62 circle {
+    fill: #004fff;
+}
+
+.line-group-63 circle {
+    fill: #004dff;
+}
+
+.line-group-64 circle {
+    fill: #004aff;
+}
+
+.line-group-65 circle {
+    fill: #0047ff;
+}
+
+.line-group-66 circle {
+    fill: #0044ff;
+}
+
+.line-group-67 circle {
+    fill: #0041ff;
+}
+
+.line-group-68 circle {
+    fill: #003eff;
+}
+
+.line-group-69 circle {
+    fill: #003cff;
+}
+
+.line-group-70 circle {
+    fill: #0039ff;
+}
+
+.line-group-71 circle {
+    fill: #0036ff;
+}
+
+.line-group-72 circle {
+    fill: #0033ff;
+}
+
+.line-group-73 circle {
+    fill: #0030ff;
+}
+
+.line-group-74 circle {
+    fill: #002dff;
+}
+
+.line-group-75 circle {
+    fill: #002bff;
+}
+
+.line-group-76 circle {
+    fill: #0028ff;
+}
+
+.line-group-77 circle {
+    fill: #0025ff;
+}
+
+.line-group-78 circle {
+    fill: #0022ff;
+}
+
+.line-group-79 circle {
+    fill: #001fff;
+}
+
+.line-group-80 circle {
+    fill: #001cff;
+}
+
+.line-group-81 circle {
+    fill: #001aff;
+}
+
+.line-group-82 circle {
+    fill: #0017ff;
+}
+
+.line-group-83 circle {
+    fill: #0014ff;
+}
+
+.line-group-84 circle {
+    fill: #0011ff;
+}
+
+.line-group-85 circle {
+    fill: #000eff;
+}
+
+.line-group-86 circle {
+    fill: #000bff;
+}
+
+.line-group-87 circle {
+    fill: #0009ff;
+}
+
+.line-group-88 circle {
+    fill: #0006ff;
+}
+
+.line-group-89 circle {
+    fill: #0003ff;
+}
+
+.line-group-90 circle {
+    fill: blue;
+}
+
+.line-group-91 circle {
+    fill: #0003ff;
+}
+
+.line-group-92 circle {
+    fill: #0006ff;
+}
+
+.line-group-93 circle {
+    fill: #0009ff;
+}
+
+.line-group-94 circle {
+    fill: #000bff;
+}
+
+.line-group-95 circle {
+    fill: #000eff;
+}
+
+.line-group-96 circle {
+    fill: #0011ff;
+}
+
+.line-group-97 circle {
+    fill: #0014ff;
+}
+
+.line-group-98 circle {
+    fill: #0017ff;
+}
+
+.line-group-99 circle {
+    fill: #001aff;
+}
+
+.line-group-100 circle {
+    fill: #001cff;
+}
+
+.line-group-101 circle {
+    fill: #001fff;
+}
+
+.line-group-102 circle {
+    fill: #0022ff;
+}
+
+.line-group-103 circle {
+    fill: #0025ff;
+}
+
+.line-group-104 circle {
+    fill: #0028ff;
+}
+
+.line-group-105 circle {
+    fill: #002bff;
+}
+
+.line-group-106 circle {
+    fill: #002dff;
+}
+
+.line-group-107 circle {
+    fill: #0030ff;
+}
+
+.line-group-108 circle {
+    fill: #0033ff;
+}
+
+.line-group-109 circle {
+    fill: #0036ff;
+}
+
+.line-group-110 circle {
+    fill: #0039ff;
+}
+
+.line-group-111 circle {
+    fill: #003cff;
+}
+
+.line-group-112 circle {
+    fill: #003eff;
+}
+
+.line-group-113 circle {
+    fill: #0041ff;
+}
+
+.line-group-114 circle {
+    fill: #0044ff;
+}
+
+.line-group-115 circle {
+    fill: #0047ff;
+}
+
+.line-group-116 circle {
+    fill: #004aff;
+}
+
+.line-group-117 circle {
+    fill: #004dff;
+}
+
+.line-group-118 circle {
+    fill: #004fff;
+}
+
+.line-group-119 circle {
+    fill: #0052ff;
+}
+
+.line-group-120 circle {
+    fill: #0055ff;
+}
+
+.line-group-121 circle {
+    fill: #0058ff;
+}
+
+.line-group-122 circle {
+    fill: #005bff;
+}
+
+.line-group-123 circle {
+    fill: #005eff;
+}
+
+.line-group-124 circle {
+    fill: #0060ff;
+}
+
+.line-group-125 circle {
+    fill: #0063ff;
+}
+
+.line-group-126 circle {
+    fill: #0066ff;
+}
+
+.line-group-127 circle {
+    fill: #0069ff;
+}
+
+.line-group-128 circle {
+    fill: #006cff;
+}
+
+.line-group-129 circle {
+    fill: #006fff;
+}
+
+.line-group-130 circle {
+    fill: #0071ff;
+}
+
+.line-group-131 circle {
+    fill: #0074ff;
+}
+
+.line-group-132 circle {
+    fill: #0077ff;
+}
+
+.line-group-133 circle {
+    fill: #007aff;
+}
+
+.line-group-134 circle {
+    fill: #007dff;
+}
+
+.line-group-135 circle {
+    fill: #0080ff;
+}
+
+.line-group-136 circle {
+    fill: #0082ff;
+}
+
+.line-group-137 circle {
+    fill: #0085ff;
+}
+
+.line-group-138 circle {
+    fill: #0088ff;
+}
+
+.line-group-139 circle {
+    fill: #008bff;
+}
+
+.line-group-140 circle {
+    fill: #008eff;
+}
+
+.line-group-141 circle {
+    fill: #0091ff;
+}
+
+.line-group-142 circle {
+    fill: #0093ff;
+}
+
+.line-group-143 circle {
+    fill: #0096ff;
+}
+
+.line-group-144 circle {
+    fill: #0099ff;
+}
+
+.line-group-145 circle {
+    fill: #009cff;
+}
+
+.line-group-146 circle {
+    fill: #009fff;
+}
+
+.line-group-147 circle {
+    fill: #00a2ff;
+}
+
+.line-group-148 circle {
+    fill: #00a4ff;
+}
+
+.line-group-149 circle {
+    fill: #00a7ff;
+}
+
+.line-group-150 circle {
+    fill: #00aaff;
+}
+
+.line-group-151 circle {
+    fill: #00adff;
+}
+
+.line-group-152 circle {
+    fill: #00b0ff;
+}
+
+.line-group-153 circle {
+    fill: #00b3ff;
+}
+
+.line-group-154 circle {
+    fill: #00b5ff;
+}
+
+.line-group-155 circle {
+    fill: #00b8ff;
+}
+
+.line-group-156 circle {
+    fill: #00bbff;
+}
+
+.line-group-157 circle {
+    fill: #00beff;
+}
+
+.line-group-158 circle {
+    fill: #00c1ff;
+}
+
+.line-group-159 circle {
+    fill: #00c4ff;
+}
+
+.line-group-160 circle {
+    fill: #00c6ff;
+}
+
+.line-group-161 circle {
+    fill: #00c9ff;
+}
+
+.line-group-162 circle {
+    fill: #00ccff;
+}
+
+.line-group-163 circle {
+    fill: #00cfff;
+}
+
+.line-group-164 circle {
+    fill: #00d2ff;
+}
+
+.line-group-165 circle {
+    fill: #00d5ff;
+}
+
+.line-group-166 circle {
+    fill: #00d7ff;
+}
+
+.line-group-167 circle {
+    fill: #00daff;
+}
+
+.line-group-168 circle {
+    fill: #00ddff;
+}
+
+.line-group-169 circle {
+    fill: #00e0ff;
+}
+
+.line-group-170 circle {
+    fill: #00e3ff;
+}
+
+.line-group-171 circle {
+    fill: #00e6ff;
+}
+
+.line-group-172 circle {
+    fill: #00e8ff;
+}
+
+.line-group-173 circle {
+    fill: #00ebff;
+}
+
+.line-group-174 circle {
+    fill: #00eeff;
+}
+
+.line-group-175 circle {
+    fill: #00f1ff;
+}
+
+.line-group-176 circle {
+    fill: #00f4ff;
+}
+
+.line-group-177 circle {
+    fill: #00f7ff;
+}
+
+.line-group-178 circle {
+    fill: #00f9ff;
+}
+
+.line-group-179 circle {
+    fill: #00fcff;
+}
