@@ -6,17 +6,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     const frameRate = 12; // Frames per second
     const interval = 1000 / frameRate; // Interval between frames (ms)
 
+    const states = ["company", "homepage", "partner", "platform", "solutions"];
+    let currentStateIndex = 0;
     let frames = []; // Placeholder for loaded frames
     let currentFrame = 0;
 
-    // Load frames from a JSON file
-    const loadFrames = async () => {
+    // Load frames for the current state
+    const loadFrames = async (state) => {
         try {
-            const response = await fetch("frames.json");
+            const response = await fetch(`${state}.json`); // Load the JSON file for the state
             frames = await response.json();
-            console.log("Frames loaded:", frames);
+            console.log(`Frames loaded for state: ${state}`, frames);
         } catch (error) {
-            console.error("Error loading frames:", error);
+            console.error(`Error loading frames for state: ${state}`, error);
         }
     };
 
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const createLineGroups = () => {
         const svgNS = "http://www.w3.org/2000/svg";
         const patternGroup = document.getElementById("circle-pattern");
+        patternGroup.innerHTML = ""; // Clear any existing line groups
 
         for (let i = 0; i < totalSegments; i++) {
             const lineGroup = document.createElementNS(svgNS, "g");
@@ -72,8 +75,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         currentFrame = (currentFrame + 1) % frames.length;
     };
 
+    // Update the container and load the JSON file for the current state
+    const updateState = async () => {
+        const container = document.querySelector(".container");
+        const state = states[currentStateIndex];
+        container.setAttribute("id", state); // Update the container ID
+        currentFrame = 0; // Reset the frame index
+        await loadFrames(state); // Load frames for the new state
+        createLineGroups(); // Recreate line groups if needed
+    };
+
+    // Event listeners for navigation buttons
+    document.getElementById("next-btn").addEventListener("click", async () => {
+        currentStateIndex = (currentStateIndex + 1) % states.length;
+        await updateState();
+    });
+
+    document.getElementById("prev-btn").addEventListener("click", async () => {
+        currentStateIndex =
+            (currentStateIndex - 1 + states.length) % states.length;
+        await updateState();
+    });
+
     // Initialize
-    await loadFrames();
+    await loadFrames(states[currentStateIndex]);
     createLineGroups();
     setInterval(animateFrame, interval);
 });

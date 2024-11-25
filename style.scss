@@ -33,8 +33,8 @@ $end-hue: 240; // Red
 #company {
     transform: rotate(45deg);
     // Start and end colors
-    $color-b: #f73b24; // Red-orange (start and end)
-    $color-a: #7fa6ee; // Blue (middle)
+    $color-b: #EC5935; // Red-orange (start and end)
+    $color-a: #8FAAE2; // Blue (middle)
 
     // Calculate midpoint
     $midpoint: $segment-count / 2;
@@ -74,8 +74,8 @@ $end-hue: 240; // Red
 #homepage {
     transform: rotate(45deg);
     // Start and end colors
-    $color-a: #840044; // Red-orange (start and end)
-    $color-b: #ed3825; // Blue (middle)
+    $color-a: #911C58; // Red-orange (start and end)
+    $color-b: #EC5935; // Blue (middle)
 
     // Calculate midpoint
     $midpoint: $segment-count / 2;
@@ -113,8 +113,8 @@ $end-hue: 240; // Red
 
 #partner {
     // Start and end colors
-    $color-b: #f9a919; // Red-orange (start and end)
-    $color-a: #830043; // Blue (middle)
+    $color-b: #F4B53F; // Red-orange (start and end)
+    $color-a: #911C58; // Blue (middle)
 
     // Calculate midpoint
     $midpoint: $segment-count / 2;
@@ -153,8 +153,8 @@ $end-hue: 240; // Red
 #platform {
     transform: rotate(-90deg);
     // Start and end colors
-    $color-b: #98e468; // Red-orange (start and end)
-    $color-a: #7b9ee6; // Blue (middle)
+    $color-b: #B1E088; // Red-orange (start and end)
+    $color-a: #8FAAE2; // Blue (middle)
 
     // Calculate midpoint
     $midpoint: $segment-count / 2;
@@ -193,8 +193,8 @@ $end-hue: 240; // Red
 #solutions {
     transform: rotate(90deg);
     // Start and end colors
-    $color-b: #fea70c; // Red-orange (start and end)
-    $color-a: #fb3317; // Blue (middle)
+    $color-b: #F4B53F; // Red-orange (start and end)
+    $color-a: #EC5935; // Blue (middle)
 
     // Calculate midpoint
     $midpoint: $segment-count / 2;
