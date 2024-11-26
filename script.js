@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!frames.length) return; // Exit if frames are not yet loaded
 
         const amplitudes = frames[currentFrame];
+        let totalAmplitude = 0; // Variable to calculate average amplitude
 
         for (let i = 0; i < totalSegments; i++) {
             const lineGroup = document.querySelector(`.line-group-${i}`);
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const dots = lineGroup.querySelectorAll("circle");
             const amplitude = amplitudes[i] || 0; // Get amplitude for this segment
+            totalAmplitude += amplitude; // Add amplitude to total
 
             dots.forEach((dot, index) => {
                 const basePosition = baseRadius;
@@ -70,6 +72,14 @@ document.addEventListener("DOMContentLoaded", async () => {
                 dot.setAttribute("fill", color);
             });
         }
+
+        // Calculate average amplitude
+        const averageAmplitude = totalAmplitude / totalSegments;
+
+        // Update the stroke width of #shadow-svg based on average amplitude
+        const shadowSvg = document.getElementById("shadow-svg");
+        const newStrokeWidth = 1 + averageAmplitude * 20; // Base width + amplitude scaling
+        shadowSvg.setAttribute("stroke-width", newStrokeWidth);
 
         // Move to the next frame
         currentFrame = (currentFrame + 1) % frames.length;

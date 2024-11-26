@@ -10,6 +10,7 @@ body {
 
     .container {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100vw;
@@ -22,86 +23,46 @@ body {
             height: 100vmin;
             fill: orange;
         }
+
+        #shadow-svg {
+            filter: blur(10px);
+            // stroke-width: 5px;
+            stroke: white; // Default stroke color
+        }
     }
 }
 
-// Define total segments and color hues
+// Define total segments and color pairs for states
 $segment-count: 180;
-$start-hue: 180; // Yellow
-$end-hue: 240; // Red
 
-#company {
-    transform: rotate(45deg);
-    // Start and end colors
-    $color-b: #EC5935; // Red-orange (start and end)
-    $color-a: #8FAAE2; // Blue (middle)
+$states: (
+    company: (start: #8FAAE2, middle: #EC5935, rotation: 45deg),
+    homepage: (start: #911C58, middle: #EC5935, rotation: 45deg),
+    partner: (start: #911C58, middle: #F4B53F, rotation: 0deg),
+    platform: (start: #8FAAE2, middle: #B1E088, rotation: -90deg),
+    solutions: (start: #EC5935, middle: #F4B53F, rotation: 90deg)
+);
 
-    // Calculate midpoint
-    $midpoint: $segment-count / 2;
-
-    @for $i from 0 through $segment-count - 1 {
-        // Initialize RGB variables
-        $red: 0;
-        $green: 0;
-        $blue: 0;
-
-        // Interpolate from Color A to Color B for the first half
-        @if $i <=$midpoint {
-            $red: red($color-a) + ((red($color-b) - red($color-a)) * $i / $midpoint);
-            $green: green($color-a) + ((green($color-b) - green($color-a)) * $i / $midpoint);
-            $blue: blue($color-a) + ((blue($color-b) - blue($color-a)) * $i / $midpoint);
+// Mixin for generating gradients
+@mixin gradient($state, $start-color, $middle-color, $rotation) {
+    svg#circle-svg {
+        #circle-pattern {
+            transform: rotate($rotation);
         }
 
-        // Interpolate from Color B back to Color A for the second half
-        @else {
-            $red: red($color-b) + ((red($color-a) - red($color-b)) * ($i - $midpoint) / $midpoint);
-            $green: green($color-b) + ((green($color-a) - green($color-b)) * ($i - $midpoint) / $midpoint);
-            $blue: blue($color-b) + ((blue($color-a) - blue($color-b)) * ($i - $midpoint) / $midpoint);
-        }
-
-        // Calculate the interpolated color
-        $color: rgb($red, $green, $blue);
-
-        .line-group-#{$i} {
-            circle {
-                fill: $color;
-            }
+        #shadow-svg {
+            stroke: $middle-color; // Apply middle color to the shadow
         }
     }
 
-}
-
-#homepage {
-    transform: rotate(45deg);
-    // Start and end colors
-    $color-a: #911C58; // Red-orange (start and end)
-    $color-b: #EC5935; // Blue (middle)
-
-    // Calculate midpoint
+    // Calculate gradient for circle segments
     $midpoint: $segment-count / 2;
 
     @for $i from 0 through $segment-count - 1 {
-        // Initialize RGB variables
-        $red: 0;
-        $green: 0;
-        $blue: 0;
-
-        // Interpolate from Color A to Color B for the first half
-        @if $i <=$midpoint {
-            $red: red($color-a) + ((red($color-b) - red($color-a)) * $i / $midpoint);
-            $green: green($color-a) + ((green($color-b) - green($color-a)) * $i / $midpoint);
-            $blue: blue($color-a) + ((blue($color-b) - blue($color-a)) * $i / $midpoint);
-        }
-
-        // Interpolate from Color B back to Color A for the second half
-        @else {
-            $red: red($color-b) + ((red($color-a) - red($color-b)) * ($i - $midpoint) / $midpoint);
-            $green: green($color-b) + ((green($color-a) - green($color-b)) * ($i - $midpoint) / $midpoint);
-            $blue: blue($color-b) + ((blue($color-a) - blue($color-b)) * ($i - $midpoint) / $midpoint);
-        }
-
-        // Calculate the interpolated color
-        $color: rgb($red, $green, $blue);
+        $color: if($i <=$midpoint,
+                mix($start-color, $middle-color, ($i / $midpoint) * 100%), // From start to middle
+                mix($middle-color, $start-color, (($i - $midpoint) / $midpoint) * 100%) // Back to start
+            );
 
         .line-group-#{$i} {
             circle {
@@ -111,121 +72,12 @@ $end-hue: 240; // Red
     }
 }
 
-#partner {
-    // Start and end colors
-    $color-b: #F4B53F; // Red-orange (start and end)
-    $color-a: #911C58; // Blue (middle)
-
-    // Calculate midpoint
-    $midpoint: $segment-count / 2;
-
-    @for $i from 0 through $segment-count - 1 {
-        // Initialize RGB variables
-        $red: 0;
-        $green: 0;
-        $blue: 0;
-
-        // Interpolate from Color A to Color B for the first half
-        @if $i <=$midpoint {
-            $red: red($color-a) + ((red($color-b) - red($color-a)) * $i / $midpoint);
-            $green: green($color-a) + ((green($color-b) - green($color-a)) * $i / $midpoint);
-            $blue: blue($color-a) + ((blue($color-b) - blue($color-a)) * $i / $midpoint);
-        }
-
-        // Interpolate from Color B back to Color A for the second half
-        @else {
-            $red: red($color-b) + ((red($color-a) - red($color-b)) * ($i - $midpoint) / $midpoint);
-            $green: green($color-b) + ((green($color-a) - green($color-b)) * ($i - $midpoint) / $midpoint);
-            $blue: blue($color-b) + ((blue($color-a) - blue($color-b)) * ($i - $midpoint) / $midpoint);
-        }
-
-        // Calculate the interpolated color
-        $color: rgb($red, $green, $blue);
-
-        .line-group-#{$i} {
-            circle {
-                fill: $color;
-            }
-        }
-    }
-}
-
-#platform {
-    transform: rotate(-90deg);
-    // Start and end colors
-    $color-b: #B1E088; // Red-orange (start and end)
-    $color-a: #8FAAE2; // Blue (middle)
-
-    // Calculate midpoint
-    $midpoint: $segment-count / 2;
-
-    @for $i from 0 through $segment-count - 1 {
-        // Initialize RGB variables
-        $red: 0;
-        $green: 0;
-        $blue: 0;
-
-        // Interpolate from Color A to Color B for the first half
-        @if $i <=$midpoint {
-            $red: red($color-a) + ((red($color-b) - red($color-a)) * $i / $midpoint);
-            $green: green($color-a) + ((green($color-b) - green($color-a)) * $i / $midpoint);
-            $blue: blue($color-a) + ((blue($color-b) - blue($color-a)) * $i / $midpoint);
-        }
-
-        // Interpolate from Color B back to Color A for the second half
-        @else {
-            $red: red($color-b) + ((red($color-a) - red($color-b)) * ($i - $midpoint) / $midpoint);
-            $green: green($color-b) + ((green($color-a) - green($color-b)) * ($i - $midpoint) / $midpoint);
-            $blue: blue($color-b) + ((blue($color-a) - blue($color-b)) * ($i - $midpoint) / $midpoint);
-        }
-
-        // Calculate the interpolated color
-        $color: rgb($red, $green, $blue);
-
-        .line-group-#{$i} {
-            circle {
-                fill: $color;
-            }
-        }
-    }
-}
-
-#solutions {
-    transform: rotate(90deg);
-    // Start and end colors
-    $color-b: #F4B53F; // Red-orange (start and end)
-    $color-a: #EC5935; // Blue (middle)
-
-    // Calculate midpoint
-    $midpoint: $segment-count / 2;
-
-    @for $i from 0 through $segment-count - 1 {
-        // Initialize RGB variables
-        $red: 0;
-        $green: 0;
-        $blue: 0;
-
-        // Interpolate from Color A to Color B for the first half
-        @if $i <=$midpoint {
-            $red: red($color-a) + ((red($color-b) - red($color-a)) * $i / $midpoint);
-            $green: green($color-a) + ((green($color-b) - green($color-a)) * $i / $midpoint);
-            $blue: blue($color-a) + ((blue($color-b) - blue($color-a)) * $i / $midpoint);
-        }
-
-        // Interpolate from Color B back to Color A for the second half
-        @else {
-            $red: red($color-b) + ((red($color-a) - red($color-b)) * ($i - $midpoint) / $midpoint);
-            $green: green($color-b) + ((green($color-a) - green($color-b)) * ($i - $midpoint) / $midpoint);
-            $blue: blue($color-b) + ((blue($color-a) - blue($color-b)) * ($i - $midpoint) / $midpoint);
-        }
-
-        // Calculate the interpolated color
-        $color: rgb($red, $green, $blue);
-
-        .line-group-#{$i} {
-            circle {
-                fill: $color;
-            }
-        }
+// Loop through states and generate styles dynamically
+@each $state, $props in $states {
+    ##{$state} {
+        @include gradient($state,
+            map-get($props, start),
+            map-get($props, middle),
+            map-get($props, rotation));
     }
 }
