@@ -79,7 +79,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Update the stroke width of #shadow-svg based on average amplitude
         const shadowSvg = document.getElementById("shadow-svg");
         const newStrokeWidth = 1 + averageAmplitude * 20; // Base width + amplitude scaling
+        const newOpacity = .25 + averageAmplitude * 1.8;
+
         shadowSvg.setAttribute("stroke-width", newStrokeWidth);
+        shadowSvg.setAttribute("opacity", newOpacity);
 
         // Move to the next frame
         currentFrame = (currentFrame + 1) % frames.length;
