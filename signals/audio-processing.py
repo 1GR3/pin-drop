@@ -118,20 +118,21 @@ def process_audio_to_array(
 
 # Parameters
 input_wave_file = "../audio.wav"       # Path to your WAV file
-low_cut_freq = 20                     # Low-cut frequency in Hz
-high_cut_freq = 12000                 # High-cut frequency in Hz
-start_time = 59.23                    # Start time in seconds
-end_time = 62.4                       # End time in seconds
+low_cut_freq = 1200                     # Low-cut frequency in Hz
+high_cut_freq = 22900                 # High-cut frequency in Hz
+start_time = 56.40                   # Start time in seconds
+end_time = 58.85
+                     # End time in seconds
 num_frequency_bins = 180              # Number of frequency bins
 output_json_file = "../frames.json"   # Path to save the JSON output
 
 # Configurable parameters
 hop_length = 512                      # Smaller hop length for overlapping windows
 normalization = True                  # Normalize frequency bins
-normalization_type = "global"         # Global normalization
-sigma = 1.32                             # Standard deviation for Gaussian smoothing across bins
+normalization_type = "per_bin"         # Global normalization
+sigma = 1.5                             # Standard deviation for Gaussian smoothing across bins
 log_frequency = False                 # Use logarithmic frequency mapping
-scaling_factor = 4.081                # Scale normalized values to enhance amplitudes
+scaling_factor = 1.81                # Scale normalized values to enhance amplitudes
 
 # Process the audio
 process_audio_to_array(
