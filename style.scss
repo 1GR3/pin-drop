@@ -25,7 +25,7 @@ body {
         }
 
         #shadow-svg {
-            filter: blur(10px);
+            filter: blur(5px);
             // stroke-width: 5px;
             stroke: white; // Default stroke color
         }
@@ -36,12 +36,13 @@ body {
 $segment-count: 180;
 
 $states: (
-    company: (start: #8FAAE2, middle: #EC5935, rotation: 45deg),
-    homepage: (start: #911C58, middle: #EC5935, rotation: 45deg),
-    partner: (start: #911C58, middle: #F4B53F, rotation: 0deg),
-    platform: (start: #8FAAE2, middle: #B1E088, rotation: -90deg),
-    solutions: (start: #EC5935, middle: #F4B53F, rotation: 90deg)
+    company: (start: #EC5935, middle: #8FAAE2, rotation: 45deg),
+    homepage: (start: #EC5935, middle: #911C58, rotation: 45deg),
+    partner: (start: #F4B53F, middle: #911C58, rotation: 0deg),
+    platform: (start: #B1E088, middle: #8FAAE2, rotation: -90deg),
+    solutions: (start: #F4B53F, middle: #EC5935, rotation: 90deg)
 );
+
 
 // Mixin for generating gradients
 @mixin gradient($state, $start-color, $middle-color, $rotation) {
