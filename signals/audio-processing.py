@@ -94,11 +94,11 @@ def process_audio_to_array(
     smoothed_bins *= scaling_factor
     smoothed_bins = np.clip(smoothed_bins, 0, 1)  # Re-clip after scaling
 
-    # Scale and round
-    scaled_bins = [[round(val, 2) for val in row] for row in smoothed_bins]
+    # Round to 2 decimals
+    rounded_bins = np.round(smoothed_bins, 2)
 
     # Transpose to create the 2D array
-    output_array = np.array(scaled_bins).T.tolist()
+    output_array = rounded_bins.T.tolist()
 
     # Save to JSON
     with open(output_json_file, "w") as file:
@@ -120,9 +120,8 @@ def process_audio_to_array(
 input_wave_file = "../audio.wav"       # Path to your WAV file
 low_cut_freq = 1200                     # Low-cut frequency in Hz
 high_cut_freq = 22900                 # High-cut frequency in Hz
-start_time = 56.40                   # Start time in seconds
-end_time = 58.85
-                     # End time in seconds
+start_time = 33.73                   # Start time in seconds
+end_time = 36.04                     # End time in seconds
 num_frequency_bins = 180              # Number of frequency bins
 output_json_file = "../frames.json"   # Path to save the JSON output
 
