@@ -5,10 +5,27 @@ body {
 }
 body .controls {
   z-index: 10;
-  position: relative;
+  display: flex;
+  padding: 48vh 1vw;
+  justify-content: space-between;
+  position: absolute;
+  width: 98vw;
+}
+body .controls button {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  width: 47.5px;
+  text-align: center;
+  transition: all 0.25s;
+}
+body .controls button:hover {
+  background-color: white;
 }
 body .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -21,2722 +38,2743 @@ body .container svg {
   height: 100vmin;
   fill: orange;
 }
+body .container #shadow-svg {
+  stroke: white;
+}
 
-#company {
+#company svg#circle-svg #circle-pattern {
   transform: rotate(45deg);
+}
+#company svg#circle-svg #shadow-svg {
+  stroke: #8FAAE2;
 }
 #company .line-group-0 circle {
-  fill: rgb(143, 170, 226);
+  fill: #8faae2;
 }
 #company .line-group-1 circle {
-  fill: rgb(144, 169, 224);
+  fill: #90a9e0;
 }
 #company .line-group-2 circle {
-  fill: rgb(145, 168, 222);
+  fill: #91a8de;
 }
 #company .line-group-3 circle {
-  fill: rgb(146, 167, 220);
+  fill: #92a7dc;
 }
 #company .line-group-4 circle {
-  fill: rgb(147, 166, 218);
+  fill: #93a6da;
 }
 #company .line-group-5 circle {
-  fill: rgb(148, 166, 216);
+  fill: #94a6d8;
 }
 #company .line-group-6 circle {
-  fill: rgb(149, 165, 214);
+  fill: #95a5d6;
 }
 #company .line-group-7 circle {
-  fill: rgb(150, 164, 213);
+  fill: #96a4d5;
 }
 #company .line-group-8 circle {
-  fill: rgb(151, 163, 211);
+  fill: #97a3d3;
 }
 #company .line-group-9 circle {
-  fill: rgb(152, 162, 209);
+  fill: #98a2d1;
 }
 #company .line-group-10 circle {
-  fill: rgb(153, 161, 207);
+  fill: #99a1cf;
 }
 #company .line-group-11 circle {
-  fill: rgb(154, 160, 205);
+  fill: #9aa0cd;
 }
 #company .line-group-12 circle {
-  fill: rgb(155, 159, 203);
+  fill: #9b9fcb;
 }
 #company .line-group-13 circle {
-  fill: rgb(156, 158, 201);
+  fill: #9c9ec9;
 }
 #company .line-group-14 circle {
-  fill: rgb(157, 157, 199);
+  fill: #9d9dc7;
 }
 #company .line-group-15 circle {
-  fill: rgb(159, 157, 197);
+  fill: #9f9dc5;
 }
 #company .line-group-16 circle {
-  fill: rgb(160, 156, 195);
+  fill: #a09cc3;
 }
 #company .line-group-17 circle {
-  fill: rgb(161, 155, 193);
+  fill: #a19bc1;
 }
 #company .line-group-18 circle {
-  fill: rgb(162, 154, 191);
+  fill: #a29abf;
 }
 #company .line-group-19 circle {
-  fill: rgb(163, 153, 189);
+  fill: #a399bd;
 }
 #company .line-group-20 circle {
-  fill: rgb(164, 152, 188);
+  fill: #a498bc;
 }
 #company .line-group-21 circle {
-  fill: rgb(165, 151, 186);
+  fill: #a597ba;
 }
 #company .line-group-22 circle {
-  fill: rgb(166, 150, 184);
+  fill: #a696b8;
 }
 #company .line-group-23 circle {
-  fill: rgb(167, 149, 182);
+  fill: #a795b6;
 }
 #company .line-group-24 circle {
-  fill: rgb(168, 148, 180);
+  fill: #a894b4;
 }
 #company .line-group-25 circle {
-  fill: rgb(169, 148, 178);
+  fill: #a994b2;
 }
 #company .line-group-26 circle {
-  fill: rgb(170, 147, 176);
+  fill: #aa93b0;
 }
 #company .line-group-27 circle {
-  fill: rgb(171, 146, 174);
+  fill: #ab92ae;
 }
 #company .line-group-28 circle {
-  fill: rgb(172, 145, 172);
+  fill: #ac91ac;
 }
 #company .line-group-29 circle {
-  fill: rgb(173, 144, 170);
+  fill: #ad90aa;
 }
 #company .line-group-30 circle {
-  fill: rgb(174, 143, 168);
+  fill: #ae8fa8;
 }
 #company .line-group-31 circle {
-  fill: rgb(175, 142, 166);
+  fill: #af8ea6;
 }
 #company .line-group-32 circle {
-  fill: rgb(176, 141, 164);
+  fill: #b08da4;
 }
 #company .line-group-33 circle {
-  fill: rgb(177, 140, 163);
+  fill: #b18ca3;
 }
 #company .line-group-34 circle {
-  fill: rgb(178, 139, 161);
+  fill: #b28ba1;
 }
 #company .line-group-35 circle {
-  fill: rgb(179, 139, 159);
+  fill: #b38b9f;
 }
 #company .line-group-36 circle {
-  fill: rgb(180, 138, 157);
+  fill: #b48a9d;
 }
 #company .line-group-37 circle {
-  fill: rgb(181, 137, 155);
+  fill: #b5899b;
 }
 #company .line-group-38 circle {
-  fill: rgb(182, 136, 153);
+  fill: #b68899;
 }
 #company .line-group-39 circle {
-  fill: rgb(183, 135, 151);
+  fill: #b78797;
 }
 #company .line-group-40 circle {
-  fill: rgb(184, 134, 149);
+  fill: #b88695;
 }
 #company .line-group-41 circle {
-  fill: rgb(185, 133, 147);
+  fill: #b98593;
 }
 #company .line-group-42 circle {
-  fill: rgb(186, 132, 145);
+  fill: #ba8491;
 }
 #company .line-group-43 circle {
-  fill: rgb(187, 131, 143);
+  fill: #bb838f;
 }
 #company .line-group-44 circle {
-  fill: rgb(188, 130, 141);
+  fill: #bc828d;
 }
 #company .line-group-45 circle {
-  fill: rgb(190, 130, 140);
+  fill: #be828c;
 }
 #company .line-group-46 circle {
-  fill: rgb(191, 129, 138);
+  fill: #bf818a;
 }
 #company .line-group-47 circle {
-  fill: rgb(192, 128, 136);
+  fill: #c08088;
 }
 #company .line-group-48 circle {
-  fill: rgb(193, 127, 134);
+  fill: #c17f86;
 }
 #company .line-group-49 circle {
-  fill: rgb(194, 126, 132);
+  fill: #c27e84;
 }
 #company .line-group-50 circle {
-  fill: rgb(195, 125, 130);
+  fill: #c37d82;
 }
 #company .line-group-51 circle {
-  fill: rgb(196, 124, 128);
+  fill: #c47c80;
 }
 #company .line-group-52 circle {
-  fill: rgb(197, 123, 126);
+  fill: #c57b7e;
 }
 #company .line-group-53 circle {
-  fill: rgb(198, 122, 124);
+  fill: #c67a7c;
 }
 #company .line-group-54 circle {
-  fill: rgb(199, 121, 122);
+  fill: #c7797a;
 }
 #company .line-group-55 circle {
-  fill: rgb(200, 121, 120);
+  fill: #c87978;
 }
 #company .line-group-56 circle {
-  fill: rgb(201, 120, 118);
+  fill: #c97876;
 }
 #company .line-group-57 circle {
-  fill: rgb(202, 119, 116);
+  fill: #ca7774;
 }
 #company .line-group-58 circle {
-  fill: rgb(203, 118, 115);
+  fill: #cb7673;
 }
 #company .line-group-59 circle {
-  fill: rgb(204, 117, 113);
+  fill: #cc7571;
 }
 #company .line-group-60 circle {
-  fill: rgb(205, 116, 111);
+  fill: #cd746f;
 }
 #company .line-group-61 circle {
-  fill: rgb(206, 115, 109);
+  fill: #ce736d;
 }
 #company .line-group-62 circle {
-  fill: rgb(207, 114, 107);
+  fill: #cf726b;
 }
 #company .line-group-63 circle {
-  fill: rgb(208, 113, 105);
+  fill: #d07169;
 }
 #company .line-group-64 circle {
-  fill: rgb(209, 112, 103);
+  fill: #d17067;
 }
 #company .line-group-65 circle {
-  fill: rgb(210, 112, 101);
+  fill: #d27065;
 }
 #company .line-group-66 circle {
-  fill: rgb(211, 111, 99);
+  fill: #d36f63;
 }
 #company .line-group-67 circle {
-  fill: rgb(212, 110, 97);
+  fill: #d46e61;
 }
 #company .line-group-68 circle {
-  fill: rgb(213, 109, 95);
+  fill: #d56d5f;
 }
 #company .line-group-69 circle {
-  fill: rgb(214, 108, 93);
+  fill: #d66c5d;
 }
 #company .line-group-70 circle {
-  fill: rgb(215, 107, 91);
+  fill: #d76b5b;
 }
 #company .line-group-71 circle {
-  fill: rgb(216, 106, 90);
+  fill: #d86a5a;
 }
 #company .line-group-72 circle {
-  fill: rgb(217, 105, 88);
+  fill: #d96958;
 }
 #company .line-group-73 circle {
-  fill: rgb(218, 104, 86);
+  fill: #da6856;
 }
 #company .line-group-74 circle {
-  fill: rgb(219, 103, 84);
+  fill: #db6754;
 }
 #company .line-group-75 circle {
-  fill: rgb(221, 103, 82);
+  fill: #dd6752;
 }
 #company .line-group-76 circle {
-  fill: rgb(222, 102, 80);
+  fill: #de6650;
 }
 #company .line-group-77 circle {
-  fill: rgb(223, 101, 78);
+  fill: #df654e;
 }
 #company .line-group-78 circle {
-  fill: rgb(224, 100, 76);
+  fill: #e0644c;
 }
 #company .line-group-79 circle {
-  fill: rgb(225, 99, 74);
+  fill: #e1634a;
 }
 #company .line-group-80 circle {
-  fill: rgb(226, 98, 72);
+  fill: #e26248;
 }
 #company .line-group-81 circle {
-  fill: rgb(227, 97, 70);
+  fill: #e36146;
 }
 #company .line-group-82 circle {
-  fill: rgb(228, 96, 68);
+  fill: #e46044;
 }
 #company .line-group-83 circle {
-  fill: rgb(229, 95, 66);
+  fill: #e55f42;
 }
 #company .line-group-84 circle {
-  fill: rgb(230, 94, 65);
+  fill: #e65e41;
 }
 #company .line-group-85 circle {
-  fill: rgb(231, 94, 63);
+  fill: #e75e3f;
 }
 #company .line-group-86 circle {
-  fill: rgb(232, 93, 61);
+  fill: #e85d3d;
 }
 #company .line-group-87 circle {
-  fill: rgb(233, 92, 59);
+  fill: #e95c3b;
 }
 #company .line-group-88 circle {
-  fill: rgb(234, 91, 57);
+  fill: #ea5b39;
 }
 #company .line-group-89 circle {
-  fill: rgb(235, 90, 55);
+  fill: #eb5a37;
 }
 #company .line-group-90 circle {
-  fill: rgb(236, 89, 53);
+  fill: #ec5935;
 }
 #company .line-group-91 circle {
-  fill: rgb(235, 90, 55);
+  fill: #eb5a37;
 }
 #company .line-group-92 circle {
-  fill: rgb(234, 91, 57);
+  fill: #ea5b39;
 }
 #company .line-group-93 circle {
-  fill: rgb(233, 92, 59);
+  fill: #e95c3b;
 }
 #company .line-group-94 circle {
-  fill: rgb(232, 93, 61);
+  fill: #e85d3d;
 }
 #company .line-group-95 circle {
-  fill: rgb(231, 94, 63);
+  fill: #e75e3f;
 }
 #company .line-group-96 circle {
-  fill: rgb(230, 94, 65);
+  fill: #e65e41;
 }
 #company .line-group-97 circle {
-  fill: rgb(229, 95, 66);
+  fill: #e55f42;
 }
 #company .line-group-98 circle {
-  fill: rgb(228, 96, 68);
+  fill: #e46044;
 }
 #company .line-group-99 circle {
-  fill: rgb(227, 97, 70);
+  fill: #e36146;
 }
 #company .line-group-100 circle {
-  fill: rgb(226, 98, 72);
+  fill: #e26248;
 }
 #company .line-group-101 circle {
-  fill: rgb(225, 99, 74);
+  fill: #e1634a;
 }
 #company .line-group-102 circle {
-  fill: rgb(224, 100, 76);
+  fill: #e0644c;
 }
 #company .line-group-103 circle {
-  fill: rgb(223, 101, 78);
+  fill: #df654e;
 }
 #company .line-group-104 circle {
-  fill: rgb(222, 102, 80);
+  fill: #de6650;
 }
 #company .line-group-105 circle {
-  fill: rgb(221, 103, 82);
+  fill: #dd6752;
 }
 #company .line-group-106 circle {
-  fill: rgb(219, 103, 84);
+  fill: #db6754;
 }
 #company .line-group-107 circle {
-  fill: rgb(218, 104, 86);
+  fill: #da6856;
 }
 #company .line-group-108 circle {
-  fill: rgb(217, 105, 88);
+  fill: #d96958;
 }
 #company .line-group-109 circle {
-  fill: rgb(216, 106, 90);
+  fill: #d86a5a;
 }
 #company .line-group-110 circle {
-  fill: rgb(215, 107, 91);
+  fill: #d76b5b;
 }
 #company .line-group-111 circle {
-  fill: rgb(214, 108, 93);
+  fill: #d66c5d;
 }
 #company .line-group-112 circle {
-  fill: rgb(213, 109, 95);
+  fill: #d56d5f;
 }
 #company .line-group-113 circle {
-  fill: rgb(212, 110, 97);
+  fill: #d46e61;
 }
 #company .line-group-114 circle {
-  fill: rgb(211, 111, 99);
+  fill: #d36f63;
 }
 #company .line-group-115 circle {
-  fill: rgb(210, 112, 101);
+  fill: #d27065;
 }
 #company .line-group-116 circle {
-  fill: rgb(209, 112, 103);
+  fill: #d17067;
 }
 #company .line-group-117 circle {
-  fill: rgb(208, 113, 105);
+  fill: #d07169;
 }
 #company .line-group-118 circle {
-  fill: rgb(207, 114, 107);
+  fill: #cf726b;
 }
 #company .line-group-119 circle {
-  fill: rgb(206, 115, 109);
+  fill: #ce736d;
 }
 #company .line-group-120 circle {
-  fill: rgb(205, 116, 111);
+  fill: #cd746f;
 }
 #company .line-group-121 circle {
-  fill: rgb(204, 117, 113);
+  fill: #cc7571;
 }
 #company .line-group-122 circle {
-  fill: rgb(203, 118, 115);
+  fill: #cb7673;
 }
 #company .line-group-123 circle {
-  fill: rgb(202, 119, 116);
+  fill: #ca7774;
 }
 #company .line-group-124 circle {
-  fill: rgb(201, 120, 118);
+  fill: #c97876;
 }
 #company .line-group-125 circle {
-  fill: rgb(200, 121, 120);
+  fill: #c87978;
 }
 #company .line-group-126 circle {
-  fill: rgb(199, 121, 122);
+  fill: #c7797a;
 }
 #company .line-group-127 circle {
-  fill: rgb(198, 122, 124);
+  fill: #c67a7c;
 }
 #company .line-group-128 circle {
-  fill: rgb(197, 123, 126);
+  fill: #c57b7e;
 }
 #company .line-group-129 circle {
-  fill: rgb(196, 124, 128);
+  fill: #c47c80;
 }
 #company .line-group-130 circle {
-  fill: rgb(195, 125, 130);
+  fill: #c37d82;
 }
 #company .line-group-131 circle {
-  fill: rgb(194, 126, 132);
+  fill: #c27e84;
 }
 #company .line-group-132 circle {
-  fill: rgb(193, 127, 134);
+  fill: #c17f86;
 }
 #company .line-group-133 circle {
-  fill: rgb(192, 128, 136);
+  fill: #c08088;
 }
 #company .line-group-134 circle {
-  fill: rgb(191, 129, 138);
+  fill: #bf818a;
 }
 #company .line-group-135 circle {
-  fill: rgb(190, 130, 140);
+  fill: #be828c;
 }
 #company .line-group-136 circle {
-  fill: rgb(188, 130, 141);
+  fill: #bc828d;
 }
 #company .line-group-137 circle {
-  fill: rgb(187, 131, 143);
+  fill: #bb838f;
 }
 #company .line-group-138 circle {
-  fill: rgb(186, 132, 145);
+  fill: #ba8491;
 }
 #company .line-group-139 circle {
-  fill: rgb(185, 133, 147);
+  fill: #b98593;
 }
 #company .line-group-140 circle {
-  fill: rgb(184, 134, 149);
+  fill: #b88695;
 }
 #company .line-group-141 circle {
-  fill: rgb(183, 135, 151);
+  fill: #b78797;
 }
 #company .line-group-142 circle {
-  fill: rgb(182, 136, 153);
+  fill: #b68899;
 }
 #company .line-group-143 circle {
-  fill: rgb(181, 137, 155);
+  fill: #b5899b;
 }
 #company .line-group-144 circle {
-  fill: rgb(180, 138, 157);
+  fill: #b48a9d;
 }
 #company .line-group-145 circle {
-  fill: rgb(179, 139, 159);
+  fill: #b38b9f;
 }
 #company .line-group-146 circle {
-  fill: rgb(178, 139, 161);
+  fill: #b28ba1;
 }
 #company .line-group-147 circle {
-  fill: rgb(177, 140, 163);
+  fill: #b18ca3;
 }
 #company .line-group-148 circle {
-  fill: rgb(176, 141, 164);
+  fill: #b08da4;
 }
 #company .line-group-149 circle {
-  fill: rgb(175, 142, 166);
+  fill: #af8ea6;
 }
 #company .line-group-150 circle {
-  fill: rgb(174, 143, 168);
+  fill: #ae8fa8;
 }
 #company .line-group-151 circle {
-  fill: rgb(173, 144, 170);
+  fill: #ad90aa;
 }
 #company .line-group-152 circle {
-  fill: rgb(172, 145, 172);
+  fill: #ac91ac;
 }
 #company .line-group-153 circle {
-  fill: rgb(171, 146, 174);
+  fill: #ab92ae;
 }
 #company .line-group-154 circle {
-  fill: rgb(170, 147, 176);
+  fill: #aa93b0;
 }
 #company .line-group-155 circle {
-  fill: rgb(169, 148, 178);
+  fill: #a994b2;
 }
 #company .line-group-156 circle {
-  fill: rgb(168, 148, 180);
+  fill: #a894b4;
 }
 #company .line-group-157 circle {
-  fill: rgb(167, 149, 182);
+  fill: #a795b6;
 }
 #company .line-group-158 circle {
-  fill: rgb(166, 150, 184);
+  fill: #a696b8;
 }
 #company .line-group-159 circle {
-  fill: rgb(165, 151, 186);
+  fill: #a597ba;
 }
 #company .line-group-160 circle {
-  fill: rgb(164, 152, 188);
+  fill: #a498bc;
 }
 #company .line-group-161 circle {
-  fill: rgb(163, 153, 189);
+  fill: #a399bd;
 }
 #company .line-group-162 circle {
-  fill: rgb(162, 154, 191);
+  fill: #a29abf;
 }
 #company .line-group-163 circle {
-  fill: rgb(161, 155, 193);
+  fill: #a19bc1;
 }
 #company .line-group-164 circle {
-  fill: rgb(160, 156, 195);
+  fill: #a09cc3;
 }
 #company .line-group-165 circle {
-  fill: rgb(159, 157, 197);
+  fill: #9f9dc5;
 }
 #company .line-group-166 circle {
-  fill: rgb(157, 157, 199);
+  fill: #9d9dc7;
 }
 #company .line-group-167 circle {
-  fill: rgb(156, 158, 201);
+  fill: #9c9ec9;
 }
 #company .line-group-168 circle {
-  fill: rgb(155, 159, 203);
+  fill: #9b9fcb;
 }
 #company .line-group-169 circle {
-  fill: rgb(154, 160, 205);
+  fill: #9aa0cd;
 }
 #company .line-group-170 circle {
-  fill: rgb(153, 161, 207);
+  fill: #99a1cf;
 }
 #company .line-group-171 circle {
-  fill: rgb(152, 162, 209);
+  fill: #98a2d1;
 }
 #company .line-group-172 circle {
-  fill: rgb(151, 163, 211);
+  fill: #97a3d3;
 }
 #company .line-group-173 circle {
-  fill: rgb(150, 164, 213);
+  fill: #96a4d5;
 }
 #company .line-group-174 circle {
-  fill: rgb(149, 165, 214);
+  fill: #95a5d6;
 }
 #company .line-group-175 circle {
-  fill: rgb(148, 166, 216);
+  fill: #94a6d8;
 }
 #company .line-group-176 circle {
-  fill: rgb(147, 166, 218);
+  fill: #93a6da;
 }
 #company .line-group-177 circle {
-  fill: rgb(146, 167, 220);
+  fill: #92a7dc;
 }
 #company .line-group-178 circle {
-  fill: rgb(145, 168, 222);
+  fill: #91a8de;
 }
 #company .line-group-179 circle {
-  fill: rgb(144, 169, 224);
+  fill: #90a9e0;
 }
 
-#homepage {
+#homepage svg#circle-svg #circle-pattern {
   transform: rotate(45deg);
 }
+#homepage svg#circle-svg #shadow-svg {
+  stroke: #911C58;
+}
 #homepage .line-group-0 circle {
-  fill: rgb(145, 28, 88);
+  fill: #911c58;
 }
 #homepage .line-group-1 circle {
-  fill: rgb(146, 29, 88);
+  fill: #921d58;
 }
 #homepage .line-group-2 circle {
-  fill: rgb(147, 29, 87);
+  fill: #931d57;
 }
 #homepage .line-group-3 circle {
-  fill: rgb(148, 30, 87);
+  fill: #941e57;
 }
 #homepage .line-group-4 circle {
-  fill: rgb(149, 31, 86);
+  fill: #951f56;
 }
 #homepage .line-group-5 circle {
-  fill: rgb(150, 31, 86);
+  fill: #961f56;
 }
 #homepage .line-group-6 circle {
-  fill: rgb(151, 32, 86);
+  fill: #972056;
 }
 #homepage .line-group-7 circle {
-  fill: rgb(152, 33, 85);
+  fill: #982155;
 }
 #homepage .line-group-8 circle {
-  fill: rgb(153, 33, 85);
+  fill: #992155;
 }
 #homepage .line-group-9 circle {
-  fill: rgb(154, 34, 85);
+  fill: #9a2255;
 }
 #homepage .line-group-10 circle {
-  fill: rgb(155, 35, 84);
+  fill: #9b2354;
 }
 #homepage .line-group-11 circle {
-  fill: rgb(156, 35, 84);
+  fill: #9c2354;
 }
 #homepage .line-group-12 circle {
-  fill: rgb(157, 36, 83);
+  fill: #9d2453;
 }
 #homepage .line-group-13 circle {
-  fill: rgb(158, 37, 83);
+  fill: #9e2553;
 }
 #homepage .line-group-14 circle {
-  fill: rgb(159, 37, 83);
+  fill: #9f2553;
 }
 #homepage .line-group-15 circle {
-  fill: rgb(160, 38, 82);
+  fill: #a02652;
 }
 #homepage .line-group-16 circle {
-  fill: rgb(161, 39, 82);
+  fill: #a12752;
 }
 #homepage .line-group-17 circle {
-  fill: rgb(162, 40, 81);
+  fill: #a22851;
 }
 #homepage .line-group-18 circle {
-  fill: rgb(163, 40, 81);
+  fill: #a32851;
 }
 #homepage .line-group-19 circle {
-  fill: rgb(164, 41, 81);
+  fill: #a42951;
 }
 #homepage .line-group-20 circle {
-  fill: rgb(165, 42, 80);
+  fill: #a52a50;
 }
 #homepage .line-group-21 circle {
-  fill: rgb(166, 42, 80);
+  fill: #a62a50;
 }
 #homepage .line-group-22 circle {
-  fill: rgb(167, 43, 79);
+  fill: #a72b4f;
 }
 #homepage .line-group-23 circle {
-  fill: rgb(168, 44, 79);
+  fill: #a82c4f;
 }
 #homepage .line-group-24 circle {
-  fill: rgb(169, 44, 79);
+  fill: #a92c4f;
 }
 #homepage .line-group-25 circle {
-  fill: rgb(170, 45, 78);
+  fill: #aa2d4e;
 }
 #homepage .line-group-26 circle {
-  fill: rgb(171, 46, 78);
+  fill: #ab2e4e;
 }
 #homepage .line-group-27 circle {
-  fill: rgb(172, 46, 78);
+  fill: #ac2e4e;
 }
 #homepage .line-group-28 circle {
-  fill: rgb(173, 47, 77);
+  fill: #ad2f4d;
 }
 #homepage .line-group-29 circle {
-  fill: rgb(174, 48, 77);
+  fill: #ae304d;
 }
 #homepage .line-group-30 circle {
-  fill: rgb(175, 48, 76);
+  fill: #af304c;
 }
 #homepage .line-group-31 circle {
-  fill: rgb(176, 49, 76);
+  fill: #b0314c;
 }
 #homepage .line-group-32 circle {
-  fill: rgb(177, 50, 76);
+  fill: #b1324c;
 }
 #homepage .line-group-33 circle {
-  fill: rgb(178, 50, 75);
+  fill: #b2324b;
 }
 #homepage .line-group-34 circle {
-  fill: rgb(179, 51, 75);
+  fill: #b3334b;
 }
 #homepage .line-group-35 circle {
-  fill: rgb(180, 52, 74);
+  fill: #b4344a;
 }
 #homepage .line-group-36 circle {
-  fill: rgb(181, 52, 74);
+  fill: #b5344a;
 }
 #homepage .line-group-37 circle {
-  fill: rgb(182, 53, 74);
+  fill: #b6354a;
 }
 #homepage .line-group-38 circle {
-  fill: rgb(183, 54, 73);
+  fill: #b73649;
 }
 #homepage .line-group-39 circle {
-  fill: rgb(184, 54, 73);
+  fill: #b83649;
 }
 #homepage .line-group-40 circle {
-  fill: rgb(185, 55, 72);
+  fill: #b93748;
 }
 #homepage .line-group-41 circle {
-  fill: rgb(186, 56, 72);
+  fill: #ba3848;
 }
 #homepage .line-group-42 circle {
-  fill: rgb(187, 56, 72);
+  fill: #bb3848;
 }
 #homepage .line-group-43 circle {
-  fill: rgb(188, 57, 71);
+  fill: #bc3947;
 }
 #homepage .line-group-44 circle {
-  fill: rgb(189, 58, 71);
+  fill: #bd3a47;
 }
 #homepage .line-group-45 circle {
-  fill: rgb(191, 59, 71);
+  fill: #bf3b47;
 }
 #homepage .line-group-46 circle {
-  fill: rgb(192, 59, 70);
+  fill: #c03b46;
 }
 #homepage .line-group-47 circle {
-  fill: rgb(193, 60, 70);
+  fill: #c13c46;
 }
 #homepage .line-group-48 circle {
-  fill: rgb(194, 61, 69);
+  fill: #c23d45;
 }
 #homepage .line-group-49 circle {
-  fill: rgb(195, 61, 69);
+  fill: #c33d45;
 }
 #homepage .line-group-50 circle {
-  fill: rgb(196, 62, 69);
+  fill: #c43e45;
 }
 #homepage .line-group-51 circle {
-  fill: rgb(197, 63, 68);
+  fill: #c53f44;
 }
 #homepage .line-group-52 circle {
-  fill: rgb(198, 63, 68);
+  fill: #c63f44;
 }
 #homepage .line-group-53 circle {
-  fill: rgb(199, 64, 67);
+  fill: #c74043;
 }
 #homepage .line-group-54 circle {
-  fill: rgb(200, 65, 67);
+  fill: #c84143;
 }
 #homepage .line-group-55 circle {
-  fill: rgb(201, 65, 67);
+  fill: #c94143;
 }
 #homepage .line-group-56 circle {
-  fill: rgb(202, 66, 66);
+  fill: #ca4242;
 }
 #homepage .line-group-57 circle {
-  fill: rgb(203, 67, 66);
+  fill: #cb4342;
 }
 #homepage .line-group-58 circle {
-  fill: rgb(204, 67, 65);
+  fill: #cc4341;
 }
 #homepage .line-group-59 circle {
-  fill: rgb(205, 68, 65);
+  fill: #cd4441;
 }
 #homepage .line-group-60 circle {
-  fill: rgb(206, 69, 65);
+  fill: #ce4541;
 }
 #homepage .line-group-61 circle {
-  fill: rgb(207, 69, 64);
+  fill: #cf4540;
 }
 #homepage .line-group-62 circle {
-  fill: rgb(208, 70, 64);
+  fill: #d04640;
 }
 #homepage .line-group-63 circle {
-  fill: rgb(209, 71, 64);
+  fill: #d14740;
 }
 #homepage .line-group-64 circle {
-  fill: rgb(210, 71, 63);
+  fill: #d2473f;
 }
 #homepage .line-group-65 circle {
-  fill: rgb(211, 72, 63);
+  fill: #d3483f;
 }
 #homepage .line-group-66 circle {
-  fill: rgb(212, 73, 62);
+  fill: #d4493e;
 }
 #homepage .line-group-67 circle {
-  fill: rgb(213, 73, 62);
+  fill: #d5493e;
 }
 #homepage .line-group-68 circle {
-  fill: rgb(214, 74, 62);
+  fill: #d64a3e;
 }
 #homepage .line-group-69 circle {
-  fill: rgb(215, 75, 61);
+  fill: #d74b3d;
 }
 #homepage .line-group-70 circle {
-  fill: rgb(216, 75, 61);
+  fill: #d84b3d;
 }
 #homepage .line-group-71 circle {
-  fill: rgb(217, 76, 60);
+  fill: #d94c3c;
 }
 #homepage .line-group-72 circle {
-  fill: rgb(218, 77, 60);
+  fill: #da4d3c;
 }
 #homepage .line-group-73 circle {
-  fill: rgb(219, 77, 60);
+  fill: #db4d3c;
 }
 #homepage .line-group-74 circle {
-  fill: rgb(220, 78, 59);
+  fill: #dc4e3b;
 }
 #homepage .line-group-75 circle {
-  fill: rgb(221, 79, 59);
+  fill: #dd4f3b;
 }
 #homepage .line-group-76 circle {
-  fill: rgb(222, 80, 58);
+  fill: #de503a;
 }
 #homepage .line-group-77 circle {
-  fill: rgb(223, 80, 58);
+  fill: #df503a;
 }
 #homepage .line-group-78 circle {
-  fill: rgb(224, 81, 58);
+  fill: #e0513a;
 }
 #homepage .line-group-79 circle {
-  fill: rgb(225, 82, 57);
+  fill: #e15239;
 }
 #homepage .line-group-80 circle {
-  fill: rgb(226, 82, 57);
+  fill: #e25239;
 }
 #homepage .line-group-81 circle {
-  fill: rgb(227, 83, 57);
+  fill: #e35339;
 }
 #homepage .line-group-82 circle {
-  fill: rgb(228, 84, 56);
+  fill: #e45438;
 }
 #homepage .line-group-83 circle {
-  fill: rgb(229, 84, 56);
+  fill: #e55438;
 }
 #homepage .line-group-84 circle {
-  fill: rgb(230, 85, 55);
+  fill: #e65537;
 }
 #homepage .line-group-85 circle {
-  fill: rgb(231, 86, 55);
+  fill: #e75637;
 }
 #homepage .line-group-86 circle {
-  fill: rgb(232, 86, 55);
+  fill: #e85637;
 }
 #homepage .line-group-87 circle {
-  fill: rgb(233, 87, 54);
+  fill: #e95736;
 }
 #homepage .line-group-88 circle {
-  fill: rgb(234, 88, 54);
+  fill: #ea5836;
 }
 #homepage .line-group-89 circle {
-  fill: rgb(235, 88, 53);
+  fill: #eb5835;
 }
 #homepage .line-group-90 circle {
-  fill: rgb(236, 89, 53);
+  fill: #ec5935;
 }
 #homepage .line-group-91 circle {
-  fill: rgb(235, 88, 53);
+  fill: #eb5835;
 }
 #homepage .line-group-92 circle {
-  fill: rgb(234, 88, 54);
+  fill: #ea5836;
 }
 #homepage .line-group-93 circle {
-  fill: rgb(233, 87, 54);
+  fill: #e95736;
 }
 #homepage .line-group-94 circle {
-  fill: rgb(232, 86, 55);
+  fill: #e85637;
 }
 #homepage .line-group-95 circle {
-  fill: rgb(231, 86, 55);
+  fill: #e75637;
 }
 #homepage .line-group-96 circle {
-  fill: rgb(230, 85, 55);
+  fill: #e65537;
 }
 #homepage .line-group-97 circle {
-  fill: rgb(229, 84, 56);
+  fill: #e55438;
 }
 #homepage .line-group-98 circle {
-  fill: rgb(228, 84, 56);
+  fill: #e45438;
 }
 #homepage .line-group-99 circle {
-  fill: rgb(227, 83, 57);
+  fill: #e35339;
 }
 #homepage .line-group-100 circle {
-  fill: rgb(226, 82, 57);
+  fill: #e25239;
 }
 #homepage .line-group-101 circle {
-  fill: rgb(225, 82, 57);
+  fill: #e15239;
 }
 #homepage .line-group-102 circle {
-  fill: rgb(224, 81, 58);
+  fill: #e0513a;
 }
 #homepage .line-group-103 circle {
-  fill: rgb(223, 80, 58);
+  fill: #df503a;
 }
 #homepage .line-group-104 circle {
-  fill: rgb(222, 80, 58);
+  fill: #de503a;
 }
 #homepage .line-group-105 circle {
-  fill: rgb(221, 79, 59);
+  fill: #dd4f3b;
 }
 #homepage .line-group-106 circle {
-  fill: rgb(220, 78, 59);
+  fill: #dc4e3b;
 }
 #homepage .line-group-107 circle {
-  fill: rgb(219, 77, 60);
+  fill: #db4d3c;
 }
 #homepage .line-group-108 circle {
-  fill: rgb(218, 77, 60);
+  fill: #da4d3c;
 }
 #homepage .line-group-109 circle {
-  fill: rgb(217, 76, 60);
+  fill: #d94c3c;
 }
 #homepage .line-group-110 circle {
-  fill: rgb(216, 75, 61);
+  fill: #d84b3d;
 }
 #homepage .line-group-111 circle {
-  fill: rgb(215, 75, 61);
+  fill: #d74b3d;
 }
 #homepage .line-group-112 circle {
-  fill: rgb(214, 74, 62);
+  fill: #d64a3e;
 }
 #homepage .line-group-113 circle {
-  fill: rgb(213, 73, 62);
+  fill: #d5493e;
 }
 #homepage .line-group-114 circle {
-  fill: rgb(212, 73, 62);
+  fill: #d4493e;
 }
 #homepage .line-group-115 circle {
-  fill: rgb(211, 72, 63);
+  fill: #d3483f;
 }
 #homepage .line-group-116 circle {
-  fill: rgb(210, 71, 63);
+  fill: #d2473f;
 }
 #homepage .line-group-117 circle {
-  fill: rgb(209, 71, 64);
+  fill: #d14740;
 }
 #homepage .line-group-118 circle {
-  fill: rgb(208, 70, 64);
+  fill: #d04640;
 }
 #homepage .line-group-119 circle {
-  fill: rgb(207, 69, 64);
+  fill: #cf4540;
 }
 #homepage .line-group-120 circle {
-  fill: rgb(206, 69, 65);
+  fill: #ce4541;
 }
 #homepage .line-group-121 circle {
-  fill: rgb(205, 68, 65);
+  fill: #cd4441;
 }
 #homepage .line-group-122 circle {
-  fill: rgb(204, 67, 65);
+  fill: #cc4341;
 }
 #homepage .line-group-123 circle {
-  fill: rgb(203, 67, 66);
+  fill: #cb4342;
 }
 #homepage .line-group-124 circle {
-  fill: rgb(202, 66, 66);
+  fill: #ca4242;
 }
 #homepage .line-group-125 circle {
-  fill: rgb(201, 65, 67);
+  fill: #c94143;
 }
 #homepage .line-group-126 circle {
-  fill: rgb(200, 65, 67);
+  fill: #c84143;
 }
 #homepage .line-group-127 circle {
-  fill: rgb(199, 64, 67);
+  fill: #c74043;
 }
 #homepage .line-group-128 circle {
-  fill: rgb(198, 63, 68);
+  fill: #c63f44;
 }
 #homepage .line-group-129 circle {
-  fill: rgb(197, 63, 68);
+  fill: #c53f44;
 }
 #homepage .line-group-130 circle {
-  fill: rgb(196, 62, 69);
+  fill: #c43e45;
 }
 #homepage .line-group-131 circle {
-  fill: rgb(195, 61, 69);
+  fill: #c33d45;
 }
 #homepage .line-group-132 circle {
-  fill: rgb(194, 61, 69);
+  fill: #c23d45;
 }
 #homepage .line-group-133 circle {
-  fill: rgb(193, 60, 70);
+  fill: #c13c46;
 }
 #homepage .line-group-134 circle {
-  fill: rgb(192, 59, 70);
+  fill: #c03b46;
 }
 #homepage .line-group-135 circle {
-  fill: rgb(191, 59, 71);
+  fill: #bf3b47;
 }
 #homepage .line-group-136 circle {
-  fill: rgb(189, 58, 71);
+  fill: #bd3a47;
 }
 #homepage .line-group-137 circle {
-  fill: rgb(188, 57, 71);
+  fill: #bc3947;
 }
 #homepage .line-group-138 circle {
-  fill: rgb(187, 56, 72);
+  fill: #bb3848;
 }
 #homepage .line-group-139 circle {
-  fill: rgb(186, 56, 72);
+  fill: #ba3848;
 }
 #homepage .line-group-140 circle {
-  fill: rgb(185, 55, 72);
+  fill: #b93748;
 }
 #homepage .line-group-141 circle {
-  fill: rgb(184, 54, 73);
+  fill: #b83649;
 }
 #homepage .line-group-142 circle {
-  fill: rgb(183, 54, 73);
+  fill: #b73649;
 }
 #homepage .line-group-143 circle {
-  fill: rgb(182, 53, 74);
+  fill: #b6354a;
 }
 #homepage .line-group-144 circle {
-  fill: rgb(181, 52, 74);
+  fill: #b5344a;
 }
 #homepage .line-group-145 circle {
-  fill: rgb(180, 52, 74);
+  fill: #b4344a;
 }
 #homepage .line-group-146 circle {
-  fill: rgb(179, 51, 75);
+  fill: #b3334b;
 }
 #homepage .line-group-147 circle {
-  fill: rgb(178, 50, 75);
+  fill: #b2324b;
 }
 #homepage .line-group-148 circle {
-  fill: rgb(177, 50, 76);
+  fill: #b1324c;
 }
 #homepage .line-group-149 circle {
-  fill: rgb(176, 49, 76);
+  fill: #b0314c;
 }
 #homepage .line-group-150 circle {
-  fill: rgb(175, 48, 76);
+  fill: #af304c;
 }
 #homepage .line-group-151 circle {
-  fill: rgb(174, 48, 77);
+  fill: #ae304d;
 }
 #homepage .line-group-152 circle {
-  fill: rgb(173, 47, 77);
+  fill: #ad2f4d;
 }
 #homepage .line-group-153 circle {
-  fill: rgb(172, 46, 78);
+  fill: #ac2e4e;
 }
 #homepage .line-group-154 circle {
-  fill: rgb(171, 46, 78);
+  fill: #ab2e4e;
 }
 #homepage .line-group-155 circle {
-  fill: rgb(170, 45, 78);
+  fill: #aa2d4e;
 }
 #homepage .line-group-156 circle {
-  fill: rgb(169, 44, 79);
+  fill: #a92c4f;
 }
 #homepage .line-group-157 circle {
-  fill: rgb(168, 44, 79);
+  fill: #a82c4f;
 }
 #homepage .line-group-158 circle {
-  fill: rgb(167, 43, 79);
+  fill: #a72b4f;
 }
 #homepage .line-group-159 circle {
-  fill: rgb(166, 42, 80);
+  fill: #a62a50;
 }
 #homepage .line-group-160 circle {
-  fill: rgb(165, 42, 80);
+  fill: #a52a50;
 }
 #homepage .line-group-161 circle {
-  fill: rgb(164, 41, 81);
+  fill: #a42951;
 }
 #homepage .line-group-162 circle {
-  fill: rgb(163, 40, 81);
+  fill: #a32851;
 }
 #homepage .line-group-163 circle {
-  fill: rgb(162, 40, 81);
+  fill: #a22851;
 }
 #homepage .line-group-164 circle {
-  fill: rgb(161, 39, 82);
+  fill: #a12752;
 }
 #homepage .line-group-165 circle {
-  fill: rgb(160, 38, 82);
+  fill: #a02652;
 }
 #homepage .line-group-166 circle {
-  fill: rgb(159, 37, 83);
+  fill: #9f2553;
 }
 #homepage .line-group-167 circle {
-  fill: rgb(158, 37, 83);
+  fill: #9e2553;
 }
 #homepage .line-group-168 circle {
-  fill: rgb(157, 36, 83);
+  fill: #9d2453;
 }
 #homepage .line-group-169 circle {
-  fill: rgb(156, 35, 84);
+  fill: #9c2354;
 }
 #homepage .line-group-170 circle {
-  fill: rgb(155, 35, 84);
+  fill: #9b2354;
 }
 #homepage .line-group-171 circle {
-  fill: rgb(154, 34, 85);
+  fill: #9a2255;
 }
 #homepage .line-group-172 circle {
-  fill: rgb(153, 33, 85);
+  fill: #992155;
 }
 #homepage .line-group-173 circle {
-  fill: rgb(152, 33, 85);
+  fill: #982155;
 }
 #homepage .line-group-174 circle {
-  fill: rgb(151, 32, 86);
+  fill: #972056;
 }
 #homepage .line-group-175 circle {
-  fill: rgb(150, 31, 86);
+  fill: #961f56;
 }
 #homepage .line-group-176 circle {
-  fill: rgb(149, 31, 86);
+  fill: #951f56;
 }
 #homepage .line-group-177 circle {
-  fill: rgb(148, 30, 87);
+  fill: #941e57;
 }
 #homepage .line-group-178 circle {
-  fill: rgb(147, 29, 87);
+  fill: #931d57;
 }
 #homepage .line-group-179 circle {
-  fill: rgb(146, 29, 88);
+  fill: #921d58;
 }
 
+#partner svg#circle-svg #circle-pattern {
+  transform: rotate(0deg);
+}
+#partner svg#circle-svg #shadow-svg {
+  stroke: #911C58;
+}
 #partner .line-group-0 circle {
-  fill: rgb(145, 28, 88);
+  fill: #911c58;
 }
 #partner .line-group-1 circle {
-  fill: rgb(146, 30, 88);
+  fill: #921e58;
 }
 #partner .line-group-2 circle {
-  fill: rgb(147, 31, 87);
+  fill: #931f57;
 }
 #partner .line-group-3 circle {
-  fill: rgb(148, 33, 87);
+  fill: #942157;
 }
 #partner .line-group-4 circle {
-  fill: rgb(149, 35, 87);
+  fill: #952357;
 }
 #partner .line-group-5 circle {
-  fill: rgb(151, 37, 87);
+  fill: #972557;
 }
 #partner .line-group-6 circle {
-  fill: rgb(152, 38, 86);
+  fill: #982656;
 }
 #partner .line-group-7 circle {
-  fill: rgb(153, 40, 86);
+  fill: #992856;
 }
 #partner .line-group-8 circle {
-  fill: rgb(154, 42, 86);
+  fill: #9a2a56;
 }
 #partner .line-group-9 circle {
-  fill: rgb(155, 43, 86);
+  fill: #9b2b56;
 }
 #partner .line-group-10 circle {
-  fill: rgb(156, 45, 85);
+  fill: #9c2d55;
 }
 #partner .line-group-11 circle {
-  fill: rgb(157, 47, 85);
+  fill: #9d2f55;
 }
 #partner .line-group-12 circle {
-  fill: rgb(158, 48, 85);
+  fill: #9e3055;
 }
 #partner .line-group-13 circle {
-  fill: rgb(159, 50, 84);
+  fill: #9f3254;
 }
 #partner .line-group-14 circle {
-  fill: rgb(160, 52, 84);
+  fill: #a03454;
 }
 #partner .line-group-15 circle {
-  fill: rgb(162, 54, 84);
+  fill: #a23654;
 }
 #partner .line-group-16 circle {
-  fill: rgb(163, 55, 84);
+  fill: #a33754;
 }
 #partner .line-group-17 circle {
-  fill: rgb(164, 57, 83);
+  fill: #a43953;
 }
 #partner .line-group-18 circle {
-  fill: rgb(165, 59, 83);
+  fill: #a53b53;
 }
 #partner .line-group-19 circle {
-  fill: rgb(166, 60, 83);
+  fill: #a63c53;
 }
 #partner .line-group-20 circle {
-  fill: rgb(167, 62, 82);
+  fill: #a73e52;
 }
 #partner .line-group-21 circle {
-  fill: rgb(168, 64, 82);
+  fill: #a84052;
 }
 #partner .line-group-22 circle {
-  fill: rgb(169, 65, 82);
+  fill: #a94152;
 }
 #partner .line-group-23 circle {
-  fill: rgb(170, 67, 82);
+  fill: #aa4352;
 }
 #partner .line-group-24 circle {
-  fill: rgb(171, 69, 81);
+  fill: #ab4551;
 }
 #partner .line-group-25 circle {
-  fill: rgb(173, 71, 81);
+  fill: #ad4751;
 }
 #partner .line-group-26 circle {
-  fill: rgb(174, 72, 81);
+  fill: #ae4851;
 }
 #partner .line-group-27 circle {
-  fill: rgb(175, 74, 81);
+  fill: #af4a51;
 }
 #partner .line-group-28 circle {
-  fill: rgb(176, 76, 80);
+  fill: #b04c50;
 }
 #partner .line-group-29 circle {
-  fill: rgb(177, 77, 80);
+  fill: #b14d50;
 }
 #partner .line-group-30 circle {
-  fill: rgb(178, 79, 80);
+  fill: #b24f50;
 }
 #partner .line-group-31 circle {
-  fill: rgb(179, 81, 79);
+  fill: #b3514f;
 }
 #partner .line-group-32 circle {
-  fill: rgb(180, 82, 79);
+  fill: #b4524f;
 }
 #partner .line-group-33 circle {
-  fill: rgb(181, 84, 79);
+  fill: #b5544f;
 }
 #partner .line-group-34 circle {
-  fill: rgb(182, 86, 79);
+  fill: #b6564f;
 }
 #partner .line-group-35 circle {
-  fill: rgb(184, 88, 78);
+  fill: #b8584e;
 }
 #partner .line-group-36 circle {
-  fill: rgb(185, 89, 78);
+  fill: #b9594e;
 }
 #partner .line-group-37 circle {
-  fill: rgb(186, 91, 78);
+  fill: #ba5b4e;
 }
 #partner .line-group-38 circle {
-  fill: rgb(187, 93, 77);
+  fill: #bb5d4d;
 }
 #partner .line-group-39 circle {
-  fill: rgb(188, 94, 77);
+  fill: #bc5e4d;
 }
 #partner .line-group-40 circle {
-  fill: rgb(189, 96, 77);
+  fill: #bd604d;
 }
 #partner .line-group-41 circle {
-  fill: rgb(190, 98, 77);
+  fill: #be624d;
 }
 #partner .line-group-42 circle {
-  fill: rgb(191, 99, 76);
+  fill: #bf634c;
 }
 #partner .line-group-43 circle {
-  fill: rgb(192, 101, 76);
+  fill: #c0654c;
 }
 #partner .line-group-44 circle {
-  fill: rgb(193, 103, 76);
+  fill: #c1674c;
 }
 #partner .line-group-45 circle {
-  fill: rgb(195, 105, 76);
+  fill: #c3694c;
 }
 #partner .line-group-46 circle {
-  fill: rgb(196, 106, 75);
+  fill: #c46a4b;
 }
 #partner .line-group-47 circle {
-  fill: rgb(197, 108, 75);
+  fill: #c56c4b;
 }
 #partner .line-group-48 circle {
-  fill: rgb(198, 110, 75);
+  fill: #c66e4b;
 }
 #partner .line-group-49 circle {
-  fill: rgb(199, 111, 74);
+  fill: #c76f4a;
 }
 #partner .line-group-50 circle {
-  fill: rgb(200, 113, 74);
+  fill: #c8714a;
 }
 #partner .line-group-51 circle {
-  fill: rgb(201, 115, 74);
+  fill: #c9734a;
 }
 #partner .line-group-52 circle {
-  fill: rgb(202, 116, 74);
+  fill: #ca744a;
 }
 #partner .line-group-53 circle {
-  fill: rgb(203, 118, 73);
+  fill: #cb7649;
 }
 #partner .line-group-54 circle {
-  fill: rgb(204, 120, 73);
+  fill: #cc7849;
 }
 #partner .line-group-55 circle {
-  fill: rgb(206, 122, 73);
+  fill: #ce7a49;
 }
 #partner .line-group-56 circle {
-  fill: rgb(207, 123, 72);
+  fill: #cf7b48;
 }
 #partner .line-group-57 circle {
-  fill: rgb(208, 125, 72);
+  fill: #d07d48;
 }
 #partner .line-group-58 circle {
-  fill: rgb(209, 127, 72);
+  fill: #d17f48;
 }
 #partner .line-group-59 circle {
-  fill: rgb(210, 128, 72);
+  fill: #d28048;
 }
 #partner .line-group-60 circle {
-  fill: rgb(211, 130, 71);
+  fill: #d38247;
 }
 #partner .line-group-61 circle {
-  fill: rgb(212, 132, 71);
+  fill: #d48447;
 }
 #partner .line-group-62 circle {
-  fill: rgb(213, 133, 71);
+  fill: #d58547;
 }
 #partner .line-group-63 circle {
-  fill: rgb(214, 135, 71);
+  fill: #d68747;
 }
 #partner .line-group-64 circle {
-  fill: rgb(215, 137, 70);
+  fill: #d78946;
 }
 #partner .line-group-65 circle {
-  fill: rgb(217, 139, 70);
+  fill: #d98b46;
 }
 #partner .line-group-66 circle {
-  fill: rgb(218, 140, 70);
+  fill: #da8c46;
 }
 #partner .line-group-67 circle {
-  fill: rgb(219, 142, 69);
+  fill: #db8e45;
 }
 #partner .line-group-68 circle {
-  fill: rgb(220, 144, 69);
+  fill: #dc9045;
 }
 #partner .line-group-69 circle {
-  fill: rgb(221, 145, 69);
+  fill: #dd9145;
 }
 #partner .line-group-70 circle {
-  fill: rgb(222, 147, 69);
+  fill: #de9345;
 }
 #partner .line-group-71 circle {
-  fill: rgb(223, 149, 68);
+  fill: #df9544;
 }
 #partner .line-group-72 circle {
-  fill: rgb(224, 150, 68);
+  fill: #e09644;
 }
 #partner .line-group-73 circle {
-  fill: rgb(225, 152, 68);
+  fill: #e19844;
 }
 #partner .line-group-74 circle {
-  fill: rgb(226, 154, 67);
+  fill: #e29a43;
 }
 #partner .line-group-75 circle {
-  fill: rgb(228, 156, 67);
+  fill: #e49c43;
 }
 #partner .line-group-76 circle {
-  fill: rgb(229, 157, 67);
+  fill: #e59d43;
 }
 #partner .line-group-77 circle {
-  fill: rgb(230, 159, 67);
+  fill: #e69f43;
 }
 #partner .line-group-78 circle {
-  fill: rgb(231, 161, 66);
+  fill: #e7a142;
 }
 #partner .line-group-79 circle {
-  fill: rgb(232, 162, 66);
+  fill: #e8a242;
 }
 #partner .line-group-80 circle {
-  fill: rgb(233, 164, 66);
+  fill: #e9a442;
 }
 #partner .line-group-81 circle {
-  fill: rgb(234, 166, 66);
+  fill: #eaa642;
 }
 #partner .line-group-82 circle {
-  fill: rgb(235, 167, 65);
+  fill: #eba741;
 }
 #partner .line-group-83 circle {
-  fill: rgb(236, 169, 65);
+  fill: #eca941;
 }
 #partner .line-group-84 circle {
-  fill: rgb(237, 171, 65);
+  fill: #edab41;
 }
 #partner .line-group-85 circle {
-  fill: rgb(239, 173, 64);
+  fill: #efad40;
 }
 #partner .line-group-86 circle {
-  fill: rgb(240, 174, 64);
+  fill: #f0ae40;
 }
 #partner .line-group-87 circle {
-  fill: rgb(241, 176, 64);
+  fill: #f1b040;
 }
 #partner .line-group-88 circle {
-  fill: rgb(242, 178, 64);
+  fill: #f2b240;
 }
 #partner .line-group-89 circle {
-  fill: rgb(243, 179, 63);
+  fill: #f3b33f;
 }
 #partner .line-group-90 circle {
-  fill: rgb(244, 181, 63);
+  fill: #f4b53f;
 }
 #partner .line-group-91 circle {
-  fill: rgb(243, 179, 63);
+  fill: #f3b33f;
 }
 #partner .line-group-92 circle {
-  fill: rgb(242, 178, 64);
+  fill: #f2b240;
 }
 #partner .line-group-93 circle {
-  fill: rgb(241, 176, 64);
+  fill: #f1b040;
 }
 #partner .line-group-94 circle {
-  fill: rgb(240, 174, 64);
+  fill: #f0ae40;
 }
 #partner .line-group-95 circle {
-  fill: rgb(239, 173, 64);
+  fill: #efad40;
 }
 #partner .line-group-96 circle {
-  fill: rgb(237, 171, 65);
+  fill: #edab41;
 }
 #partner .line-group-97 circle {
-  fill: rgb(236, 169, 65);
+  fill: #eca941;
 }
 #partner .line-group-98 circle {
-  fill: rgb(235, 167, 65);
+  fill: #eba741;
 }
 #partner .line-group-99 circle {
-  fill: rgb(234, 166, 66);
+  fill: #eaa642;
 }
 #partner .line-group-100 circle {
-  fill: rgb(233, 164, 66);
+  fill: #e9a442;
 }
 #partner .line-group-101 circle {
-  fill: rgb(232, 162, 66);
+  fill: #e8a242;
 }
 #partner .line-group-102 circle {
-  fill: rgb(231, 161, 66);
+  fill: #e7a142;
 }
 #partner .line-group-103 circle {
-  fill: rgb(230, 159, 67);
+  fill: #e69f43;
 }
 #partner .line-group-104 circle {
-  fill: rgb(229, 157, 67);
+  fill: #e59d43;
 }
 #partner .line-group-105 circle {
-  fill: rgb(228, 156, 67);
+  fill: #e49c43;
 }
 #partner .line-group-106 circle {
-  fill: rgb(226, 154, 67);
+  fill: #e29a43;
 }
 #partner .line-group-107 circle {
-  fill: rgb(225, 152, 68);
+  fill: #e19844;
 }
 #partner .line-group-108 circle {
-  fill: rgb(224, 150, 68);
+  fill: #e09644;
 }
 #partner .line-group-109 circle {
-  fill: rgb(223, 149, 68);
+  fill: #df9544;
 }
 #partner .line-group-110 circle {
-  fill: rgb(222, 147, 69);
+  fill: #de9345;
 }
 #partner .line-group-111 circle {
-  fill: rgb(221, 145, 69);
+  fill: #dd9145;
 }
 #partner .line-group-112 circle {
-  fill: rgb(220, 144, 69);
+  fill: #dc9045;
 }
 #partner .line-group-113 circle {
-  fill: rgb(219, 142, 69);
+  fill: #db8e45;
 }
 #partner .line-group-114 circle {
-  fill: rgb(218, 140, 70);
+  fill: #da8c46;
 }
 #partner .line-group-115 circle {
-  fill: rgb(217, 139, 70);
+  fill: #d98b46;
 }
 #partner .line-group-116 circle {
-  fill: rgb(215, 137, 70);
+  fill: #d78946;
 }
 #partner .line-group-117 circle {
-  fill: rgb(214, 135, 71);
+  fill: #d68747;
 }
 #partner .line-group-118 circle {
-  fill: rgb(213, 133, 71);
+  fill: #d58547;
 }
 #partner .line-group-119 circle {
-  fill: rgb(212, 132, 71);
+  fill: #d48447;
 }
 #partner .line-group-120 circle {
-  fill: rgb(211, 130, 71);
+  fill: #d38247;
 }
 #partner .line-group-121 circle {
-  fill: rgb(210, 128, 72);
+  fill: #d28048;
 }
 #partner .line-group-122 circle {
-  fill: rgb(209, 127, 72);
+  fill: #d17f48;
 }
 #partner .line-group-123 circle {
-  fill: rgb(208, 125, 72);
+  fill: #d07d48;
 }
 #partner .line-group-124 circle {
-  fill: rgb(207, 123, 72);
+  fill: #cf7b48;
 }
 #partner .line-group-125 circle {
-  fill: rgb(206, 122, 73);
+  fill: #ce7a49;
 }
 #partner .line-group-126 circle {
-  fill: rgb(204, 120, 73);
+  fill: #cc7849;
 }
 #partner .line-group-127 circle {
-  fill: rgb(203, 118, 73);
+  fill: #cb7649;
 }
 #partner .line-group-128 circle {
-  fill: rgb(202, 116, 74);
+  fill: #ca744a;
 }
 #partner .line-group-129 circle {
-  fill: rgb(201, 115, 74);
+  fill: #c9734a;
 }
 #partner .line-group-130 circle {
-  fill: rgb(200, 113, 74);
+  fill: #c8714a;
 }
 #partner .line-group-131 circle {
-  fill: rgb(199, 111, 74);
+  fill: #c76f4a;
 }
 #partner .line-group-132 circle {
-  fill: rgb(198, 110, 75);
+  fill: #c66e4b;
 }
 #partner .line-group-133 circle {
-  fill: rgb(197, 108, 75);
+  fill: #c56c4b;
 }
 #partner .line-group-134 circle {
-  fill: rgb(196, 106, 75);
+  fill: #c46a4b;
 }
 #partner .line-group-135 circle {
-  fill: rgb(195, 105, 76);
+  fill: #c3694c;
 }
 #partner .line-group-136 circle {
-  fill: rgb(193, 103, 76);
+  fill: #c1674c;
 }
 #partner .line-group-137 circle {
-  fill: rgb(192, 101, 76);
+  fill: #c0654c;
 }
 #partner .line-group-138 circle {
-  fill: rgb(191, 99, 76);
+  fill: #bf634c;
 }
 #partner .line-group-139 circle {
-  fill: rgb(190, 98, 77);
+  fill: #be624d;
 }
 #partner .line-group-140 circle {
-  fill: rgb(189, 96, 77);
+  fill: #bd604d;
 }
 #partner .line-group-141 circle {
-  fill: rgb(188, 94, 77);
+  fill: #bc5e4d;
 }
 #partner .line-group-142 circle {
-  fill: rgb(187, 93, 77);
+  fill: #bb5d4d;
 }
 #partner .line-group-143 circle {
-  fill: rgb(186, 91, 78);
+  fill: #ba5b4e;
 }
 #partner .line-group-144 circle {
-  fill: rgb(185, 89, 78);
+  fill: #b9594e;
 }
 #partner .line-group-145 circle {
-  fill: rgb(184, 88, 78);
+  fill: #b8584e;
 }
 #partner .line-group-146 circle {
-  fill: rgb(182, 86, 79);
+  fill: #b6564f;
 }
 #partner .line-group-147 circle {
-  fill: rgb(181, 84, 79);
+  fill: #b5544f;
 }
 #partner .line-group-148 circle {
-  fill: rgb(180, 82, 79);
+  fill: #b4524f;
 }
 #partner .line-group-149 circle {
-  fill: rgb(179, 81, 79);
+  fill: #b3514f;
 }
 #partner .line-group-150 circle {
-  fill: rgb(178, 79, 80);
+  fill: #b24f50;
 }
 #partner .line-group-151 circle {
-  fill: rgb(177, 77, 80);
+  fill: #b14d50;
 }
 #partner .line-group-152 circle {
-  fill: rgb(176, 76, 80);
+  fill: #b04c50;
 }
 #partner .line-group-153 circle {
-  fill: rgb(175, 74, 81);
+  fill: #af4a51;
 }
 #partner .line-group-154 circle {
-  fill: rgb(174, 72, 81);
+  fill: #ae4851;
 }
 #partner .line-group-155 circle {
-  fill: rgb(173, 71, 81);
+  fill: #ad4751;
 }
 #partner .line-group-156 circle {
-  fill: rgb(171, 69, 81);
+  fill: #ab4551;
 }
 #partner .line-group-157 circle {
-  fill: rgb(170, 67, 82);
+  fill: #aa4352;
 }
 #partner .line-group-158 circle {
-  fill: rgb(169, 65, 82);
+  fill: #a94152;
 }
 #partner .line-group-159 circle {
-  fill: rgb(168, 64, 82);
+  fill: #a84052;
 }
 #partner .line-group-160 circle {
-  fill: rgb(167, 62, 82);
+  fill: #a73e52;
 }
 #partner .line-group-161 circle {
-  fill: rgb(166, 60, 83);
+  fill: #a63c53;
 }
 #partner .line-group-162 circle {
-  fill: rgb(165, 59, 83);
+  fill: #a53b53;
 }
 #partner .line-group-163 circle {
-  fill: rgb(164, 57, 83);
+  fill: #a43953;
 }
 #partner .line-group-164 circle {
-  fill: rgb(163, 55, 84);
+  fill: #a33754;
 }
 #partner .line-group-165 circle {
-  fill: rgb(162, 54, 84);
+  fill: #a23654;
 }
 #partner .line-group-166 circle {
-  fill: rgb(160, 52, 84);
+  fill: #a03454;
 }
 #partner .line-group-167 circle {
-  fill: rgb(159, 50, 84);
+  fill: #9f3254;
 }
 #partner .line-group-168 circle {
-  fill: rgb(158, 48, 85);
+  fill: #9e3055;
 }
 #partner .line-group-169 circle {
-  fill: rgb(157, 47, 85);
+  fill: #9d2f55;
 }
 #partner .line-group-170 circle {
-  fill: rgb(156, 45, 85);
+  fill: #9c2d55;
 }
 #partner .line-group-171 circle {
-  fill: rgb(155, 43, 86);
+  fill: #9b2b56;
 }
 #partner .line-group-172 circle {
-  fill: rgb(154, 42, 86);
+  fill: #9a2a56;
 }
 #partner .line-group-173 circle {
-  fill: rgb(153, 40, 86);
+  fill: #992856;
 }
 #partner .line-group-174 circle {
-  fill: rgb(152, 38, 86);
+  fill: #982656;
 }
 #partner .line-group-175 circle {
-  fill: rgb(151, 37, 87);
+  fill: #972557;
 }
 #partner .line-group-176 circle {
-  fill: rgb(149, 35, 87);
+  fill: #952357;
 }
 #partner .line-group-177 circle {
-  fill: rgb(148, 33, 87);
+  fill: #942157;
 }
 #partner .line-group-178 circle {
-  fill: rgb(147, 31, 87);
+  fill: #931f57;
 }
 #partner .line-group-179 circle {
-  fill: rgb(146, 30, 88);
+  fill: #921e58;
 }
 
-#platform {
+#platform svg#circle-svg #circle-pattern {
   transform: rotate(-90deg);
 }
+#platform svg#circle-svg #shadow-svg {
+  stroke: #8FAAE2;
+}
 #platform .line-group-0 circle {
-  fill: rgb(143, 170, 226);
+  fill: #8faae2;
 }
 #platform .line-group-1 circle {
-  fill: rgb(143, 171, 225);
+  fill: #8fabe1;
 }
 #platform .line-group-2 circle {
-  fill: rgb(144, 171, 224);
+  fill: #90abe0;
 }
 #platform .line-group-3 circle {
-  fill: rgb(144, 172, 223);
+  fill: #90acdf;
 }
 #platform .line-group-4 circle {
-  fill: rgb(145, 172, 222);
+  fill: #91acde;
 }
 #platform .line-group-5 circle {
-  fill: rgb(145, 173, 221);
+  fill: #91addd;
 }
 #platform .line-group-6 circle {
-  fill: rgb(145, 174, 220);
+  fill: #91aedc;
 }
 #platform .line-group-7 circle {
-  fill: rgb(146, 174, 219);
+  fill: #92aedb;
 }
 #platform .line-group-8 circle {
-  fill: rgb(146, 175, 218);
+  fill: #92afda;
 }
 #platform .line-group-9 circle {
-  fill: rgb(146, 175, 217);
+  fill: #92afd9;
 }
 #platform .line-group-10 circle {
-  fill: rgb(147, 176, 216);
+  fill: #93b0d8;
 }
 #platform .line-group-11 circle {
-  fill: rgb(147, 177, 215);
+  fill: #93b1d7;
 }
 #platform .line-group-12 circle {
-  fill: rgb(148, 177, 214);
+  fill: #94b1d6;
 }
 #platform .line-group-13 circle {
-  fill: rgb(148, 178, 213);
+  fill: #94b2d5;
 }
 #platform .line-group-14 circle {
-  fill: rgb(148, 178, 212);
+  fill: #94b2d4;
 }
 #platform .line-group-15 circle {
-  fill: rgb(149, 179, 211);
+  fill: #95b3d3;
 }
 #platform .line-group-16 circle {
-  fill: rgb(149, 180, 210);
+  fill: #95b4d2;
 }
 #platform .line-group-17 circle {
-  fill: rgb(149, 180, 209);
+  fill: #95b4d1;
 }
 #platform .line-group-18 circle {
-  fill: rgb(150, 181, 208);
+  fill: #96b5d0;
 }
 #platform .line-group-19 circle {
-  fill: rgb(150, 181, 207);
+  fill: #96b5cf;
 }
 #platform .line-group-20 circle {
-  fill: rgb(151, 182, 206);
+  fill: #97b6ce;
 }
 #platform .line-group-21 circle {
-  fill: rgb(151, 183, 205);
+  fill: #97b7cd;
 }
 #platform .line-group-22 circle {
-  fill: rgb(151, 183, 204);
+  fill: #97b7cc;
 }
 #platform .line-group-23 circle {
-  fill: rgb(152, 184, 203);
+  fill: #98b8cb;
 }
 #platform .line-group-24 circle {
-  fill: rgb(152, 184, 202);
+  fill: #98b8ca;
 }
 #platform .line-group-25 circle {
-  fill: rgb(152, 185, 201);
+  fill: #98b9c9;
 }
 #platform .line-group-26 circle {
-  fill: rgb(153, 186, 200);
+  fill: #99bac8;
 }
 #platform .line-group-27 circle {
-  fill: rgb(153, 186, 199);
+  fill: #99bac7;
 }
 #platform .line-group-28 circle {
-  fill: rgb(154, 187, 198);
+  fill: #9abbc6;
 }
 #platform .line-group-29 circle {
-  fill: rgb(154, 187, 197);
+  fill: #9abbc5;
 }
 #platform .line-group-30 circle {
-  fill: rgb(154, 188, 196);
+  fill: #9abcc4;
 }
 #platform .line-group-31 circle {
-  fill: rgb(155, 189, 195);
+  fill: #9bbdc3;
 }
 #platform .line-group-32 circle {
-  fill: rgb(155, 189, 194);
+  fill: #9bbdc2;
 }
 #platform .line-group-33 circle {
-  fill: rgb(155, 190, 193);
+  fill: #9bbec1;
 }
 #platform .line-group-34 circle {
-  fill: rgb(156, 190, 192);
+  fill: #9cbec0;
 }
 #platform .line-group-35 circle {
-  fill: rgb(156, 191, 191);
+  fill: #9cbfbf;
 }
 #platform .line-group-36 circle {
-  fill: rgb(157, 192, 190);
+  fill: #9dc0be;
 }
 #platform .line-group-37 circle {
-  fill: rgb(157, 192, 189);
+  fill: #9dc0bd;
 }
 #platform .line-group-38 circle {
-  fill: rgb(157, 193, 188);
+  fill: #9dc1bc;
 }
 #platform .line-group-39 circle {
-  fill: rgb(158, 193, 187);
+  fill: #9ec1bb;
 }
 #platform .line-group-40 circle {
-  fill: rgb(158, 194, 186);
+  fill: #9ec2ba;
 }
 #platform .line-group-41 circle {
-  fill: rgb(158, 195, 185);
+  fill: #9ec3b9;
 }
 #platform .line-group-42 circle {
-  fill: rgb(159, 195, 184);
+  fill: #9fc3b8;
 }
 #platform .line-group-43 circle {
-  fill: rgb(159, 196, 183);
+  fill: #9fc4b7;
 }
 #platform .line-group-44 circle {
-  fill: rgb(160, 196, 182);
+  fill: #a0c4b6;
 }
 #platform .line-group-45 circle {
-  fill: rgb(160, 197, 181);
+  fill: #a0c5b5;
 }
 #platform .line-group-46 circle {
-  fill: rgb(160, 198, 180);
+  fill: #a0c6b4;
 }
 #platform .line-group-47 circle {
-  fill: rgb(161, 198, 179);
+  fill: #a1c6b3;
 }
 #platform .line-group-48 circle {
-  fill: rgb(161, 199, 178);
+  fill: #a1c7b2;
 }
 #platform .line-group-49 circle {
-  fill: rgb(162, 199, 177);
+  fill: #a2c7b1;
 }
 #platform .line-group-50 circle {
-  fill: rgb(162, 200, 176);
+  fill: #a2c8b0;
 }
 #platform .line-group-51 circle {
-  fill: rgb(162, 201, 175);
+  fill: #a2c9af;
 }
 #platform .line-group-52 circle {
-  fill: rgb(163, 201, 174);
+  fill: #a3c9ae;
 }
 #platform .line-group-53 circle {
-  fill: rgb(163, 202, 173);
+  fill: #a3caad;
 }
 #platform .line-group-54 circle {
-  fill: rgb(163, 202, 172);
+  fill: #a3caac;
 }
 #platform .line-group-55 circle {
-  fill: rgb(164, 203, 171);
+  fill: #a4cbab;
 }
 #platform .line-group-56 circle {
-  fill: rgb(164, 204, 170);
+  fill: #a4ccaa;
 }
 #platform .line-group-57 circle {
-  fill: rgb(165, 204, 169);
+  fill: #a5cca9;
 }
 #platform .line-group-58 circle {
-  fill: rgb(165, 205, 168);
+  fill: #a5cda8;
 }
 #platform .line-group-59 circle {
-  fill: rgb(165, 205, 167);
+  fill: #a5cda7;
 }
 #platform .line-group-60 circle {
-  fill: rgb(166, 206, 166);
+  fill: #a6cea6;
 }
 #platform .line-group-61 circle {
-  fill: rgb(166, 207, 165);
+  fill: #a6cfa5;
 }
 #platform .line-group-62 circle {
-  fill: rgb(166, 207, 164);
+  fill: #a6cfa4;
 }
 #platform .line-group-63 circle {
-  fill: rgb(167, 208, 163);
+  fill: #a7d0a3;
 }
 #platform .line-group-64 circle {
-  fill: rgb(167, 208, 162);
+  fill: #a7d0a2;
 }
 #platform .line-group-65 circle {
-  fill: rgb(168, 209, 161);
+  fill: #a8d1a1;
 }
 #platform .line-group-66 circle {
-  fill: rgb(168, 210, 160);
+  fill: #a8d2a0;
 }
 #platform .line-group-67 circle {
-  fill: rgb(168, 210, 159);
+  fill: #a8d29f;
 }
 #platform .line-group-68 circle {
-  fill: rgb(169, 211, 158);
+  fill: #a9d39e;
 }
 #platform .line-group-69 circle {
-  fill: rgb(169, 211, 157);
+  fill: #a9d39d;
 }
 #platform .line-group-70 circle {
-  fill: rgb(169, 212, 156);
+  fill: #a9d49c;
 }
 #platform .line-group-71 circle {
-  fill: rgb(170, 213, 155);
+  fill: #aad59b;
 }
 #platform .line-group-72 circle {
-  fill: rgb(170, 213, 154);
+  fill: #aad59a;
 }
 #platform .line-group-73 circle {
-  fill: rgb(171, 214, 153);
+  fill: #abd699;
 }
 #platform .line-group-74 circle {
-  fill: rgb(171, 214, 152);
+  fill: #abd698;
 }
 #platform .line-group-75 circle {
-  fill: rgb(171, 215, 151);
+  fill: #abd797;
 }
 #platform .line-group-76 circle {
-  fill: rgb(172, 216, 150);
+  fill: #acd896;
 }
 #platform .line-group-77 circle {
-  fill: rgb(172, 216, 149);
+  fill: #acd895;
 }
 #platform .line-group-78 circle {
-  fill: rgb(172, 217, 148);
+  fill: #acd994;
 }
 #platform .line-group-79 circle {
-  fill: rgb(173, 217, 147);
+  fill: #add993;
 }
 #platform .line-group-80 circle {
-  fill: rgb(173, 218, 146);
+  fill: #adda92;
 }
 #platform .line-group-81 circle {
-  fill: rgb(174, 219, 145);
+  fill: #aedb91;
 }
 #platform .line-group-82 circle {
-  fill: rgb(174, 219, 144);
+  fill: #aedb90;
 }
 #platform .line-group-83 circle {
-  fill: rgb(174, 220, 143);
+  fill: #aedc8f;
 }
 #platform .line-group-84 circle {
-  fill: rgb(175, 220, 142);
+  fill: #afdc8e;
 }
 #platform .line-group-85 circle {
-  fill: rgb(175, 221, 141);
+  fill: #afdd8d;
 }
 #platform .line-group-86 circle {
-  fill: rgb(175, 222, 140);
+  fill: #afde8c;
 }
 #platform .line-group-87 circle {
-  fill: rgb(176, 222, 139);
+  fill: #b0de8b;
 }
 #platform .line-group-88 circle {
-  fill: rgb(176, 223, 138);
+  fill: #b0df8a;
 }
 #platform .line-group-89 circle {
-  fill: rgb(177, 223, 137);
+  fill: #b1df89;
 }
 #platform .line-group-90 circle {
-  fill: rgb(177, 224, 136);
+  fill: #b1e088;
 }
 #platform .line-group-91 circle {
-  fill: rgb(177, 223, 137);
+  fill: #b1df89;
 }
 #platform .line-group-92 circle {
-  fill: rgb(176, 223, 138);
+  fill: #b0df8a;
 }
 #platform .line-group-93 circle {
-  fill: rgb(176, 222, 139);
+  fill: #b0de8b;
 }
 #platform .line-group-94 circle {
-  fill: rgb(175, 222, 140);
+  fill: #afde8c;
 }
 #platform .line-group-95 circle {
-  fill: rgb(175, 221, 141);
+  fill: #afdd8d;
 }
 #platform .line-group-96 circle {
-  fill: rgb(175, 220, 142);
+  fill: #afdc8e;
 }
 #platform .line-group-97 circle {
-  fill: rgb(174, 220, 143);
+  fill: #aedc8f;
 }
 #platform .line-group-98 circle {
-  fill: rgb(174, 219, 144);
+  fill: #aedb90;
 }
 #platform .line-group-99 circle {
-  fill: rgb(174, 219, 145);
+  fill: #aedb91;
 }
 #platform .line-group-100 circle {
-  fill: rgb(173, 218, 146);
+  fill: #adda92;
 }
 #platform .line-group-101 circle {
-  fill: rgb(173, 217, 147);
+  fill: #add993;
 }
 #platform .line-group-102 circle {
-  fill: rgb(172, 217, 148);
+  fill: #acd994;
 }
 #platform .line-group-103 circle {
-  fill: rgb(172, 216, 149);
+  fill: #acd895;
 }
 #platform .line-group-104 circle {
-  fill: rgb(172, 216, 150);
+  fill: #acd896;
 }
 #platform .line-group-105 circle {
-  fill: rgb(171, 215, 151);
+  fill: #abd797;
 }
 #platform .line-group-106 circle {
-  fill: rgb(171, 214, 152);
+  fill: #abd698;
 }
 #platform .line-group-107 circle {
-  fill: rgb(171, 214, 153);
+  fill: #abd699;
 }
 #platform .line-group-108 circle {
-  fill: rgb(170, 213, 154);
+  fill: #aad59a;
 }
 #platform .line-group-109 circle {
-  fill: rgb(170, 213, 155);
+  fill: #aad59b;
 }
 #platform .line-group-110 circle {
-  fill: rgb(169, 212, 156);
+  fill: #a9d49c;
 }
 #platform .line-group-111 circle {
-  fill: rgb(169, 211, 157);
+  fill: #a9d39d;
 }
 #platform .line-group-112 circle {
-  fill: rgb(169, 211, 158);
+  fill: #a9d39e;
 }
 #platform .line-group-113 circle {
-  fill: rgb(168, 210, 159);
+  fill: #a8d29f;
 }
 #platform .line-group-114 circle {
-  fill: rgb(168, 210, 160);
+  fill: #a8d2a0;
 }
 #platform .line-group-115 circle {
-  fill: rgb(168, 209, 161);
+  fill: #a8d1a1;
 }
 #platform .line-group-116 circle {
-  fill: rgb(167, 208, 162);
+  fill: #a7d0a2;
 }
 #platform .line-group-117 circle {
-  fill: rgb(167, 208, 163);
+  fill: #a7d0a3;
 }
 #platform .line-group-118 circle {
-  fill: rgb(166, 207, 164);
+  fill: #a6cfa4;
 }
 #platform .line-group-119 circle {
-  fill: rgb(166, 207, 165);
+  fill: #a6cfa5;
 }
 #platform .line-group-120 circle {
-  fill: rgb(166, 206, 166);
+  fill: #a6cea6;
 }
 #platform .line-group-121 circle {
-  fill: rgb(165, 205, 167);
+  fill: #a5cda7;
 }
 #platform .line-group-122 circle {
-  fill: rgb(165, 205, 168);
+  fill: #a5cda8;
 }
 #platform .line-group-123 circle {
-  fill: rgb(165, 204, 169);
+  fill: #a5cca9;
 }
 #platform .line-group-124 circle {
-  fill: rgb(164, 204, 170);
+  fill: #a4ccaa;
 }
 #platform .line-group-125 circle {
-  fill: rgb(164, 203, 171);
+  fill: #a4cbab;
 }
 #platform .line-group-126 circle {
-  fill: rgb(163, 202, 172);
+  fill: #a3caac;
 }
 #platform .line-group-127 circle {
-  fill: rgb(163, 202, 173);
+  fill: #a3caad;
 }
 #platform .line-group-128 circle {
-  fill: rgb(163, 201, 174);
+  fill: #a3c9ae;
 }
 #platform .line-group-129 circle {
-  fill: rgb(162, 201, 175);
+  fill: #a2c9af;
 }
 #platform .line-group-130 circle {
-  fill: rgb(162, 200, 176);
+  fill: #a2c8b0;
 }
 #platform .line-group-131 circle {
-  fill: rgb(162, 199, 177);
+  fill: #a2c7b1;
 }
 #platform .line-group-132 circle {
-  fill: rgb(161, 199, 178);
+  fill: #a1c7b2;
 }
 #platform .line-group-133 circle {
-  fill: rgb(161, 198, 179);
+  fill: #a1c6b3;
 }
 #platform .line-group-134 circle {
-  fill: rgb(160, 198, 180);
+  fill: #a0c6b4;
 }
 #platform .line-group-135 circle {
-  fill: rgb(160, 197, 181);
+  fill: #a0c5b5;
 }
 #platform .line-group-136 circle {
-  fill: rgb(160, 196, 182);
+  fill: #a0c4b6;
 }
 #platform .line-group-137 circle {
-  fill: rgb(159, 196, 183);
+  fill: #9fc4b7;
 }
 #platform .line-group-138 circle {
-  fill: rgb(159, 195, 184);
+  fill: #9fc3b8;
 }
 #platform .line-group-139 circle {
-  fill: rgb(158, 195, 185);
+  fill: #9ec3b9;
 }
 #platform .line-group-140 circle {
-  fill: rgb(158, 194, 186);
+  fill: #9ec2ba;
 }
 #platform .line-group-141 circle {
-  fill: rgb(158, 193, 187);
+  fill: #9ec1bb;
 }
 #platform .line-group-142 circle {
-  fill: rgb(157, 193, 188);
+  fill: #9dc1bc;
 }
 #platform .line-group-143 circle {
-  fill: rgb(157, 192, 189);
+  fill: #9dc0bd;
 }
 #platform .line-group-144 circle {
-  fill: rgb(157, 192, 190);
+  fill: #9dc0be;
 }
 #platform .line-group-145 circle {
-  fill: rgb(156, 191, 191);
+  fill: #9cbfbf;
 }
 #platform .line-group-146 circle {
-  fill: rgb(156, 190, 192);
+  fill: #9cbec0;
 }
 #platform .line-group-147 circle {
-  fill: rgb(155, 190, 193);
+  fill: #9bbec1;
 }
 #platform .line-group-148 circle {
-  fill: rgb(155, 189, 194);
+  fill: #9bbdc2;
 }
 #platform .line-group-149 circle {
-  fill: rgb(155, 189, 195);
+  fill: #9bbdc3;
 }
 #platform .line-group-150 circle {
-  fill: rgb(154, 188, 196);
+  fill: #9abcc4;
 }
 #platform .line-group-151 circle {
-  fill: rgb(154, 187, 197);
+  fill: #9abbc5;
 }
 #platform .line-group-152 circle {
-  fill: rgb(154, 187, 198);
+  fill: #9abbc6;
 }
 #platform .line-group-153 circle {
-  fill: rgb(153, 186, 199);
+  fill: #99bac7;
 }
 #platform .line-group-154 circle {
-  fill: rgb(153, 186, 200);
+  fill: #99bac8;
 }
 #platform .line-group-155 circle {
-  fill: rgb(152, 185, 201);
+  fill: #98b9c9;
 }
 #platform .line-group-156 circle {
-  fill: rgb(152, 184, 202);
+  fill: #98b8ca;
 }
 #platform .line-group-157 circle {
-  fill: rgb(152, 184, 203);
+  fill: #98b8cb;
 }
 #platform .line-group-158 circle {
-  fill: rgb(151, 183, 204);
+  fill: #97b7cc;
 }
 #platform .line-group-159 circle {
-  fill: rgb(151, 183, 205);
+  fill: #97b7cd;
 }
 #platform .line-group-160 circle {
-  fill: rgb(151, 182, 206);
+  fill: #97b6ce;
 }
 #platform .line-group-161 circle {
-  fill: rgb(150, 181, 207);
+  fill: #96b5cf;
 }
 #platform .line-group-162 circle {
-  fill: rgb(150, 181, 208);
+  fill: #96b5d0;
 }
 #platform .line-group-163 circle {
-  fill: rgb(149, 180, 209);
+  fill: #95b4d1;
 }
 #platform .line-group-164 circle {
-  fill: rgb(149, 180, 210);
+  fill: #95b4d2;
 }
 #platform .line-group-165 circle {
-  fill: rgb(149, 179, 211);
+  fill: #95b3d3;
 }
 #platform .line-group-166 circle {
-  fill: rgb(148, 178, 212);
+  fill: #94b2d4;
 }
 #platform .line-group-167 circle {
-  fill: rgb(148, 178, 213);
+  fill: #94b2d5;
 }
 #platform .line-group-168 circle {
-  fill: rgb(148, 177, 214);
+  fill: #94b1d6;
 }
 #platform .line-group-169 circle {
-  fill: rgb(147, 177, 215);
+  fill: #93b1d7;
 }
 #platform .line-group-170 circle {
-  fill: rgb(147, 176, 216);
+  fill: #93b0d8;
 }
 #platform .line-group-171 circle {
-  fill: rgb(146, 175, 217);
+  fill: #92afd9;
 }
 #platform .line-group-172 circle {
-  fill: rgb(146, 175, 218);
+  fill: #92afda;
 }
 #platform .line-group-173 circle {
-  fill: rgb(146, 174, 219);
+  fill: #92aedb;
 }
 #platform .line-group-174 circle {
-  fill: rgb(145, 174, 220);
+  fill: #91aedc;
 }
 #platform .line-group-175 circle {
-  fill: rgb(145, 173, 221);
+  fill: #91addd;
 }
 #platform .line-group-176 circle {
-  fill: rgb(145, 172, 222);
+  fill: #91acde;
 }
 #platform .line-group-177 circle {
-  fill: rgb(144, 172, 223);
+  fill: #90acdf;
 }
 #platform .line-group-178 circle {
-  fill: rgb(144, 171, 224);
+  fill: #90abe0;
 }
 #platform .line-group-179 circle {
-  fill: rgb(143, 171, 225);
+  fill: #8fabe1;
 }
 
-#solutions {
+#solutions svg#circle-svg #circle-pattern {
   transform: rotate(90deg);
 }
+#solutions svg#circle-svg #shadow-svg {
+  stroke: #EC5935;
+}
 #solutions .line-group-0 circle {
-  fill: rgb(236, 89, 53);
+  fill: #ec5935;
 }
 #solutions .line-group-1 circle {
-  fill: rgb(236, 90, 53);
+  fill: #ec5a35;
 }
 #solutions .line-group-2 circle {
-  fill: rgb(236, 91, 53);
+  fill: #ec5b35;
 }
 #solutions .line-group-3 circle {
-  fill: rgb(236, 92, 53);
+  fill: #ec5c35;
 }
 #solutions .line-group-4 circle {
-  fill: rgb(236, 93, 53);
+  fill: #ec5d35;
 }
 #solutions .line-group-5 circle {
-  fill: rgb(236, 94, 54);
+  fill: #ec5e36;
 }
 #solutions .line-group-6 circle {
-  fill: rgb(237, 95, 54);
+  fill: #ed5f36;
 }
 #solutions .line-group-7 circle {
-  fill: rgb(237, 96, 54);
+  fill: #ed6036;
 }
 #solutions .line-group-8 circle {
-  fill: rgb(237, 97, 54);
+  fill: #ed6136;
 }
 #solutions .line-group-9 circle {
-  fill: rgb(237, 98, 54);
+  fill: #ed6236;
 }
 #solutions .line-group-10 circle {
-  fill: rgb(237, 99, 54);
+  fill: #ed6336;
 }
 #solutions .line-group-11 circle {
-  fill: rgb(237, 100, 54);
+  fill: #ed6436;
 }
 #solutions .line-group-12 circle {
-  fill: rgb(237, 101, 54);
+  fill: #ed6536;
 }
 #solutions .line-group-13 circle {
-  fill: rgb(237, 102, 54);
+  fill: #ed6636;
 }
 #solutions .line-group-14 circle {
-  fill: rgb(237, 103, 55);
+  fill: #ed6737;
 }
 #solutions .line-group-15 circle {
-  fill: rgb(237, 104, 55);
+  fill: #ed6837;
 }
 #solutions .line-group-16 circle {
-  fill: rgb(237, 105, 55);
+  fill: #ed6937;
 }
 #solutions .line-group-17 circle {
-  fill: rgb(238, 106, 55);
+  fill: #ee6a37;
 }
 #solutions .line-group-18 circle {
-  fill: rgb(238, 107, 55);
+  fill: #ee6b37;
 }
 #solutions .line-group-19 circle {
-  fill: rgb(238, 108, 55);
+  fill: #ee6c37;
 }
 #solutions .line-group-20 circle {
-  fill: rgb(238, 109, 55);
+  fill: #ee6d37;
 }
 #solutions .line-group-21 circle {
-  fill: rgb(238, 110, 55);
+  fill: #ee6e37;
 }
 #solutions .line-group-22 circle {
-  fill: rgb(238, 111, 55);
+  fill: #ee6f37;
 }
 #solutions .line-group-23 circle {
-  fill: rgb(238, 113, 56);
+  fill: #ee7138;
 }
 #solutions .line-group-24 circle {
-  fill: rgb(238, 114, 56);
+  fill: #ee7238;
 }
 #solutions .line-group-25 circle {
-  fill: rgb(238, 115, 56);
+  fill: #ee7338;
 }
 #solutions .line-group-26 circle {
-  fill: rgb(238, 116, 56);
+  fill: #ee7438;
 }
 #solutions .line-group-27 circle {
-  fill: rgb(238, 117, 56);
+  fill: #ee7538;
 }
 #solutions .line-group-28 circle {
-  fill: rgb(238, 118, 56);
+  fill: #ee7638;
 }
 #solutions .line-group-29 circle {
-  fill: rgb(239, 119, 56);
+  fill: #ef7738;
 }
 #solutions .line-group-30 circle {
-  fill: rgb(239, 120, 56);
+  fill: #ef7838;
 }
 #solutions .line-group-31 circle {
-  fill: rgb(239, 121, 56);
+  fill: #ef7938;
 }
 #solutions .line-group-32 circle {
-  fill: rgb(239, 122, 57);
+  fill: #ef7a39;
 }
 #solutions .line-group-33 circle {
-  fill: rgb(239, 123, 57);
+  fill: #ef7b39;
 }
 #solutions .line-group-34 circle {
-  fill: rgb(239, 124, 57);
+  fill: #ef7c39;
 }
 #solutions .line-group-35 circle {
-  fill: rgb(239, 125, 57);
+  fill: #ef7d39;
 }
 #solutions .line-group-36 circle {
-  fill: rgb(239, 126, 57);
+  fill: #ef7e39;
 }
 #solutions .line-group-37 circle {
-  fill: rgb(239, 127, 57);
+  fill: #ef7f39;
 }
 #solutions .line-group-38 circle {
-  fill: rgb(239, 128, 57);
+  fill: #ef8039;
 }
 #solutions .line-group-39 circle {
-  fill: rgb(239, 129, 57);
+  fill: #ef8139;
 }
 #solutions .line-group-40 circle {
-  fill: rgb(240, 130, 57);
+  fill: #f08239;
 }
 #solutions .line-group-41 circle {
-  fill: rgb(240, 131, 58);
+  fill: #f0833a;
 }
 #solutions .line-group-42 circle {
-  fill: rgb(240, 132, 58);
+  fill: #f0843a;
 }
 #solutions .line-group-43 circle {
-  fill: rgb(240, 133, 58);
+  fill: #f0853a;
 }
 #solutions .line-group-44 circle {
-  fill: rgb(240, 134, 58);
+  fill: #f0863a;
 }
 #solutions .line-group-45 circle {
-  fill: rgb(240, 135, 58);
+  fill: #f0873a;
 }
 #solutions .line-group-46 circle {
-  fill: rgb(240, 136, 58);
+  fill: #f0883a;
 }
 #solutions .line-group-47 circle {
-  fill: rgb(240, 137, 58);
+  fill: #f0893a;
 }
 #solutions .line-group-48 circle {
-  fill: rgb(240, 138, 58);
+  fill: #f08a3a;
 }
 #solutions .line-group-49 circle {
-  fill: rgb(240, 139, 58);
+  fill: #f08b3a;
 }
 #solutions .line-group-50 circle {
-  fill: rgb(240, 140, 59);
+  fill: #f08c3b;
 }
 #solutions .line-group-51 circle {
-  fill: rgb(241, 141, 59);
+  fill: #f18d3b;
 }
 #solutions .line-group-52 circle {
-  fill: rgb(241, 142, 59);
+  fill: #f18e3b;
 }
 #solutions .line-group-53 circle {
-  fill: rgb(241, 143, 59);
+  fill: #f18f3b;
 }
 #solutions .line-group-54 circle {
-  fill: rgb(241, 144, 59);
+  fill: #f1903b;
 }
 #solutions .line-group-55 circle {
-  fill: rgb(241, 145, 59);
+  fill: #f1913b;
 }
 #solutions .line-group-56 circle {
-  fill: rgb(241, 146, 59);
+  fill: #f1923b;
 }
 #solutions .line-group-57 circle {
-  fill: rgb(241, 147, 59);
+  fill: #f1933b;
 }
 #solutions .line-group-58 circle {
-  fill: rgb(241, 148, 59);
+  fill: #f1943b;
 }
 #solutions .line-group-59 circle {
-  fill: rgb(241, 149, 60);
+  fill: #f1953c;
 }
 #solutions .line-group-60 circle {
-  fill: rgb(241, 150, 60);
+  fill: #f1963c;
 }
 #solutions .line-group-61 circle {
-  fill: rgb(241, 151, 60);
+  fill: #f1973c;
 }
 #solutions .line-group-62 circle {
-  fill: rgb(242, 152, 60);
+  fill: #f2983c;
 }
 #solutions .line-group-63 circle {
-  fill: rgb(242, 153, 60);
+  fill: #f2993c;
 }
 #solutions .line-group-64 circle {
-  fill: rgb(242, 154, 60);
+  fill: #f29a3c;
 }
 #solutions .line-group-65 circle {
-  fill: rgb(242, 155, 60);
+  fill: #f29b3c;
 }
 #solutions .line-group-66 circle {
-  fill: rgb(242, 156, 60);
+  fill: #f29c3c;
 }
 #solutions .line-group-67 circle {
-  fill: rgb(242, 157, 60);
+  fill: #f29d3c;
 }
 #solutions .line-group-68 circle {
-  fill: rgb(242, 159, 61);
+  fill: #f29f3d;
 }
 #solutions .line-group-69 circle {
-  fill: rgb(242, 160, 61);
+  fill: #f2a03d;
 }
 #solutions .line-group-70 circle {
-  fill: rgb(242, 161, 61);
+  fill: #f2a13d;
 }
 #solutions .line-group-71 circle {
-  fill: rgb(242, 162, 61);
+  fill: #f2a23d;
 }
 #solutions .line-group-72 circle {
-  fill: rgb(242, 163, 61);
+  fill: #f2a33d;
 }
 #solutions .line-group-73 circle {
-  fill: rgb(242, 164, 61);
+  fill: #f2a43d;
 }
 #solutions .line-group-74 circle {
-  fill: rgb(243, 165, 61);
+  fill: #f3a53d;
 }
 #solutions .line-group-75 circle {
-  fill: rgb(243, 166, 61);
+  fill: #f3a63d;
 }
 #solutions .line-group-76 circle {
-  fill: rgb(243, 167, 61);
+  fill: #f3a73d;
 }
 #solutions .line-group-77 circle {
-  fill: rgb(243, 168, 62);
+  fill: #f3a83e;
 }
 #solutions .line-group-78 circle {
-  fill: rgb(243, 169, 62);
+  fill: #f3a93e;
 }
 #solutions .line-group-79 circle {
-  fill: rgb(243, 170, 62);
+  fill: #f3aa3e;
 }
 #solutions .line-group-80 circle {
-  fill: rgb(243, 171, 62);
+  fill: #f3ab3e;
 }
 #solutions .line-group-81 circle {
-  fill: rgb(243, 172, 62);
+  fill: #f3ac3e;
 }
 #solutions .line-group-82 circle {
-  fill: rgb(243, 173, 62);
+  fill: #f3ad3e;
 }
 #solutions .line-group-83 circle {
-  fill: rgb(243, 174, 62);
+  fill: #f3ae3e;
 }
 #solutions .line-group-84 circle {
-  fill: rgb(243, 175, 62);
+  fill: #f3af3e;
 }
 #solutions .line-group-85 circle {
-  fill: rgb(244, 176, 62);
+  fill: #f4b03e;
 }
 #solutions .line-group-86 circle {
-  fill: rgb(244, 177, 63);
+  fill: #f4b13f;
 }
 #solutions .line-group-87 circle {
-  fill: rgb(244, 178, 63);
+  fill: #f4b23f;
 }
 #solutions .line-group-88 circle {
-  fill: rgb(244, 179, 63);
+  fill: #f4b33f;
 }
 #solutions .line-group-89 circle {
-  fill: rgb(244, 180, 63);
+  fill: #f4b43f;
 }
 #solutions .line-group-90 circle {
-  fill: rgb(244, 181, 63);
+  fill: #f4b53f;
 }
 #solutions .line-group-91 circle {
-  fill: rgb(244, 180, 63);
+  fill: #f4b43f;
 }
 #solutions .line-group-92 circle {
-  fill: rgb(244, 179, 63);
+  fill: #f4b33f;
 }
 #solutions .line-group-93 circle {
-  fill: rgb(244, 178, 63);
+  fill: #f4b23f;
 }
 #solutions .line-group-94 circle {
-  fill: rgb(244, 177, 63);
+  fill: #f4b13f;
 }
 #solutions .line-group-95 circle {
-  fill: rgb(244, 176, 62);
+  fill: #f4b03e;
 }
 #solutions .line-group-96 circle {
-  fill: rgb(243, 175, 62);
+  fill: #f3af3e;
 }
 #solutions .line-group-97 circle {
-  fill: rgb(243, 174, 62);
+  fill: #f3ae3e;
 }
 #solutions .line-group-98 circle {
-  fill: rgb(243, 173, 62);
+  fill: #f3ad3e;
 }
 #solutions .line-group-99 circle {
-  fill: rgb(243, 172, 62);
+  fill: #f3ac3e;
 }
 #solutions .line-group-100 circle {
-  fill: rgb(243, 171, 62);
+  fill: #f3ab3e;
 }
 #solutions .line-group-101 circle {
-  fill: rgb(243, 170, 62);
+  fill: #f3aa3e;
 }
 #solutions .line-group-102 circle {
-  fill: rgb(243, 169, 62);
+  fill: #f3a93e;
 }
 #solutions .line-group-103 circle {
-  fill: rgb(243, 168, 62);
+  fill: #f3a83e;
 }
 #solutions .line-group-104 circle {
-  fill: rgb(243, 167, 61);
+  fill: #f3a73d;
 }
 #solutions .line-group-105 circle {
-  fill: rgb(243, 166, 61);
+  fill: #f3a63d;
 }
 #solutions .line-group-106 circle {
-  fill: rgb(243, 165, 61);
+  fill: #f3a53d;
 }
 #solutions .line-group-107 circle {
-  fill: rgb(242, 164, 61);
+  fill: #f2a43d;
 }
 #solutions .line-group-108 circle {
-  fill: rgb(242, 163, 61);
+  fill: #f2a33d;
 }
 #solutions .line-group-109 circle {
-  fill: rgb(242, 162, 61);
+  fill: #f2a23d;
 }
 #solutions .line-group-110 circle {
-  fill: rgb(242, 161, 61);
+  fill: #f2a13d;
 }
 #solutions .line-group-111 circle {
-  fill: rgb(242, 160, 61);
+  fill: #f2a03d;
 }
 #solutions .line-group-112 circle {
-  fill: rgb(242, 159, 61);
+  fill: #f29f3d;
 }
 #solutions .line-group-113 circle {
-  fill: rgb(242, 157, 60);
+  fill: #f29d3c;
 }
 #solutions .line-group-114 circle {
-  fill: rgb(242, 156, 60);
+  fill: #f29c3c;
 }
 #solutions .line-group-115 circle {
-  fill: rgb(242, 155, 60);
+  fill: #f29b3c;
 }
 #solutions .line-group-116 circle {
-  fill: rgb(242, 154, 60);
+  fill: #f29a3c;
 }
 #solutions .line-group-117 circle {
-  fill: rgb(242, 153, 60);
+  fill: #f2993c;
 }
 #solutions .line-group-118 circle {
-  fill: rgb(242, 152, 60);
+  fill: #f2983c;
 }
 #solutions .line-group-119 circle {
-  fill: rgb(241, 151, 60);
+  fill: #f1973c;
 }
 #solutions .line-group-120 circle {
-  fill: rgb(241, 150, 60);
+  fill: #f1963c;
 }
 #solutions .line-group-121 circle {
-  fill: rgb(241, 149, 60);
+  fill: #f1953c;
 }
 #solutions .line-group-122 circle {
-  fill: rgb(241, 148, 59);
+  fill: #f1943b;
 }
 #solutions .line-group-123 circle {
-  fill: rgb(241, 147, 59);
+  fill: #f1933b;
 }
 #solutions .line-group-124 circle {
-  fill: rgb(241, 146, 59);
+  fill: #f1923b;
 }
 #solutions .line-group-125 circle {
-  fill: rgb(241, 145, 59);
+  fill: #f1913b;
 }
 #solutions .line-group-126 circle {
-  fill: rgb(241, 144, 59);
+  fill: #f1903b;
 }
 #solutions .line-group-127 circle {
-  fill: rgb(241, 143, 59);
+  fill: #f18f3b;
 }
 #solutions .line-group-128 circle {
-  fill: rgb(241, 142, 59);
+  fill: #f18e3b;
 }
 #solutions .line-group-129 circle {
-  fill: rgb(241, 141, 59);
+  fill: #f18d3b;
 }
 #solutions .line-group-130 circle {
-  fill: rgb(240, 140, 59);
+  fill: #f08c3b;
 }
 #solutions .line-group-131 circle {
-  fill: rgb(240, 139, 58);
+  fill: #f08b3a;
 }
 #solutions .line-group-132 circle {
-  fill: rgb(240, 138, 58);
+  fill: #f08a3a;
 }
 #solutions .line-group-133 circle {
-  fill: rgb(240, 137, 58);
+  fill: #f0893a;
 }
 #solutions .line-group-134 circle {
-  fill: rgb(240, 136, 58);
+  fill: #f0883a;
 }
 #solutions .line-group-135 circle {
-  fill: rgb(240, 135, 58);
+  fill: #f0873a;
 }
 #solutions .line-group-136 circle {
-  fill: rgb(240, 134, 58);
+  fill: #f0863a;
 }
 #solutions .line-group-137 circle {
-  fill: rgb(240, 133, 58);
+  fill: #f0853a;
 }
 #solutions .line-group-138 circle {
-  fill: rgb(240, 132, 58);
+  fill: #f0843a;
 }
 #solutions .line-group-139 circle {
-  fill: rgb(240, 131, 58);
+  fill: #f0833a;
 }
 #solutions .line-group-140 circle {
-  fill: rgb(240, 130, 57);
+  fill: #f08239;
 }
 #solutions .line-group-141 circle {
-  fill: rgb(239, 129, 57);
+  fill: #ef8139;
 }
 #solutions .line-group-142 circle {
-  fill: rgb(239, 128, 57);
+  fill: #ef8039;
 }
 #solutions .line-group-143 circle {
-  fill: rgb(239, 127, 57);
+  fill: #ef7f39;
 }
 #solutions .line-group-144 circle {
-  fill: rgb(239, 126, 57);
+  fill: #ef7e39;
 }
 #solutions .line-group-145 circle {
-  fill: rgb(239, 125, 57);
+  fill: #ef7d39;
 }
 #solutions .line-group-146 circle {
-  fill: rgb(239, 124, 57);
+  fill: #ef7c39;
 }
 #solutions .line-group-147 circle {
-  fill: rgb(239, 123, 57);
+  fill: #ef7b39;
 }
 #solutions .line-group-148 circle {
-  fill: rgb(239, 122, 57);
+  fill: #ef7a39;
 }
 #solutions .line-group-149 circle {
-  fill: rgb(239, 121, 56);
+  fill: #ef7938;
 }
 #solutions .line-group-150 circle {
-  fill: rgb(239, 120, 56);
+  fill: #ef7838;
 }
 #solutions .line-group-151 circle {
-  fill: rgb(239, 119, 56);
+  fill: #ef7738;
 }
 #solutions .line-group-152 circle {
-  fill: rgb(238, 118, 56);
+  fill: #ee7638;
 }
 #solutions .line-group-153 circle {
-  fill: rgb(238, 117, 56);
+  fill: #ee7538;
 }
 #solutions .line-group-154 circle {
-  fill: rgb(238, 116, 56);
+  fill: #ee7438;
 }
 #solutions .line-group-155 circle {
-  fill: rgb(238, 115, 56);
+  fill: #ee7338;
 }
 #solutions .line-group-156 circle {
-  fill: rgb(238, 114, 56);
+  fill: #ee7238;
 }
 #solutions .line-group-157 circle {
-  fill: rgb(238, 113, 56);
+  fill: #ee7138;
 }
 #solutions .line-group-158 circle {
-  fill: rgb(238, 111, 55);
+  fill: #ee6f37;
 }
 #solutions .line-group-159 circle {
-  fill: rgb(238, 110, 55);
+  fill: #ee6e37;
 }
 #solutions .line-group-160 circle {
-  fill: rgb(238, 109, 55);
+  fill: #ee6d37;
 }
 #solutions .line-group-161 circle {
-  fill: rgb(238, 108, 55);
+  fill: #ee6c37;
 }
 #solutions .line-group-162 circle {
-  fill: rgb(238, 107, 55);
+  fill: #ee6b37;
 }
 #solutions .line-group-163 circle {
-  fill: rgb(238, 106, 55);
+  fill: #ee6a37;
 }
 #solutions .line-group-164 circle {
-  fill: rgb(237, 105, 55);
+  fill: #ed6937;
 }
 #solutions .line-group-165 circle {
-  fill: rgb(237, 104, 55);
+  fill: #ed6837;
 }
 #solutions .line-group-166 circle {
-  fill: rgb(237, 103, 55);
+  fill: #ed6737;
 }
 #solutions .line-group-167 circle {
-  fill: rgb(237, 102, 54);
+  fill: #ed6636;
 }
 #solutions .line-group-168 circle {
-  fill: rgb(237, 101, 54);
+  fill: #ed6536;
 }
 #solutions .line-group-169 circle {
-  fill: rgb(237, 100, 54);
+  fill: #ed6436;
 }
 #solutions .line-group-170 circle {
-  fill: rgb(237, 99, 54);
+  fill: #ed6336;
 }
 #solutions .line-group-171 circle {
-  fill: rgb(237, 98, 54);
+  fill: #ed6236;
 }
 #solutions .line-group-172 circle {
-  fill: rgb(237, 97, 54);
+  fill: #ed6136;
 }
 #solutions .line-group-173 circle {
-  fill: rgb(237, 96, 54);
+  fill: #ed6036;
 }
 #solutions .line-group-174 circle {
-  fill: rgb(237, 95, 54);
+  fill: #ed5f36;
 }
 #solutions .line-group-175 circle {
-  fill: rgb(236, 94, 54);
+  fill: #ec5e36;
 }
 #solutions .line-group-176 circle {
-  fill: rgb(236, 93, 53);
+  fill: #ec5d35;
 }
 #solutions .line-group-177 circle {
-  fill: rgb(236, 92, 53);
+  fill: #ec5c35;
 }
 #solutions .line-group-178 circle {
-  fill: rgb(236, 91, 53);
+  fill: #ec5b35;
 }
 #solutions .line-group-179 circle {
-  fill: rgb(236, 90, 53);
+  fill: #ec5a35;
 }
 
 /*# sourceMappingURL=style.css.map */
