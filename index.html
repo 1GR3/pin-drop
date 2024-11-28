@@ -15,12 +15,17 @@
     </div>
     <div class="container" id="company">
         <svg id="circle-svg" preserveAspectRatio="xMidYMid meet" viewBox="-200 -200 400 400">
+            <defs>
+                <filter id="blur-filter" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+                </filter>
+            </defs>
             <!-- Group of lines to create the circular shape -->
             <g id="circle-pattern">
                 <!-- JavaScript will create the line groups with unique class names -->
 
             </g>
-            <ellipse id="shadow-svg" cx="0" cy="170" rx="105" ry="10" fill="none" stroke="white" />
+            <ellipse id="shadow-svg" cx="0" cy="170" rx="105" ry="10" fill="none" filter="url(#blur-filter)" />
         </svg>
 
     </div>
