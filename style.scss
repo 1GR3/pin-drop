@@ -5,7 +5,6 @@ body {
 
     .controls {
         z-index: 10;
-
         display: flex;
         padding: 48vh 1vw;
         justify-content: space-between;
@@ -13,13 +12,13 @@ body {
         width: 98vw;
 
         button {
-            background-color: rgba(white, .25);
+            background-color: rgba(white, 0.25);
             padding: 1rem;
             border-radius: 50%;
             border: none;
             width: 47.5px;
             text-align: center;
-            transition: all .25s;
+            transition: all 0.25s;
 
             &:hover {
                 background-color: white;
@@ -44,9 +43,7 @@ body {
         }
 
         #shadow-svg {
-            //filter: blur(5px);
-            // stroke-width: 5px;
-            stroke: white; // Default stroke color
+            stroke: white;
         }
     }
 }
@@ -62,12 +59,12 @@ $states: (
     solutions: (start: #F4B53F, middle: #EC5935, rotation: 90deg)
 );
 
-
-// Mixin for generating gradients
+// Mixin for generating sinusoidal gradients
 @mixin gradient($state, $start-color, $middle-color, $rotation) {
     svg#circle-svg {
         #circle-pattern {
-            transform: rotate($rotation);
+            // Adjust rotation to compensate for 90° clockwise offset
+            transform: rotate($rotation + 90deg);
         }
 
         #shadow-svg {
@@ -75,21 +72,27 @@ $states: (
         }
     }
 
-    // Calculate gradient for circle segments
-    $midpoint: $segment-count / 2;
+    // Calculate sinusoidal gradient for circle segments
+    $pi: 3.14159265359; // Pi constant
 
     @for $i from 0 through $segment-count - 1 {
-        $color: if($i <=$midpoint,
-                mix($start-color, $middle-color, ($i / $midpoint) * 100%), // From start to middle
-                mix($middle-color, $start-color, (($i - $midpoint) / $midpoint) * 100%) // Back to start
-            );
+        // Map the index to a sinusoidal range (0 to 1)
+        $sin-factor: (
+            sin(($i / $segment-count) * $pi * 2) + 1) / 2;
 
-        .line-group-#{$i} {
-            circle {
-                fill: $color;
-            }
+        // Convert sinusoidal factor to a percentage for mix()
+        $weight: $sin-factor * 100%;
+
+        // Interpolate between the two colors based on the sinusoidal factor
+        $color: mix($start-color, $middle-color, $weight
+        );
+
+    .line-group-#{$i} {
+        circle {
+            fill: $color;
         }
     }
+}
 }
 
 // Loop through states and generate styles dynamically
