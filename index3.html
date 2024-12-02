@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer</title>
+    <link rel="stylesheet" href="style.scss">
+</head>
+
+<body>
+    <!-- <div class="controls">
+        <button id="prev-btn">«</button>
+        <button id="next-btn">»</button>
+    </div> -->
+    <div class="container" id="company">
+        <svg id="circle-svg" preserveAspectRatio="xMidYMid meet" viewBox="-200 -200 400 400">
+            <defs>
+                <filter id="blur-filter" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+                </filter>
+            </defs>
+            <!-- Group of lines to create the circular shape -->
+            <g id="circle-pattern">
+                <!-- JavaScript will create the line groups with unique class names -->
+
+            </g>
+            <ellipse id="shadow-svg" cx="0" cy="170" rx="105" ry="10" fill="none" filter="url(#blur-filter)" />
+        </svg>
+
+    </div>
+    <!-- <script type="module" src="graphic.js"></script> -->
+    <script src="script-test.js"></script>
+</body>
+
+</html>
