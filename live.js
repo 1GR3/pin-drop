@@ -6,53 +6,86 @@ document.addEventListener("DOMContentLoaded", async () => {
     const frameRate = 12; // Frames per second
     const interval = 1000 / frameRate; // Interval between frames (ms)
 
+    const minFreq = 20; // Minimum frequency (Hz)
+    const maxFreq = 12000; // Maximum frequency (Hz)
+
     let audioContext;
     let analyser;
     let dataArray;
-    let frames = []; // Placeholder for audio data frames
+    let frequencyBins;
 
-    // Initialize microphone and Web Audio API
+    const micStatus = document.createElement("div");
+    micStatus.style.position = "absolute";
+    micStatus.style.top = "10px";
+    micStatus.style.left = "10px";
+    micStatus.style.padding = "10px";
+    micStatus.style.color = "white";
+    micStatus.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    micStatus.style.zIndex = "1000";
+    micStatus.textContent = "Initializing microphone...";
+    document.body.appendChild(micStatus);
+
     const initializeMicrophone = async () => {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            console.log("Media Stream:", stream); // Debugging stream
+
+            micStatus.textContent = "Microphone is active.";
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
             const source = audioContext.createMediaStreamSource(stream);
 
             analyser = audioContext.createAnalyser();
-            analyser.fftSize = 256; // Adjust this for resolution
-            const bufferLength = analyser.frequencyBinCount; // Half of fftSize
+            analyser.fftSize = 256;
+            const bufferLength = analyser.frequencyBinCount;
             dataArray = new Uint8Array(bufferLength);
 
-            source.connect(analyser);
+            const nyquist = audioContext.sampleRate / 2;
+            frequencyBins = Array.from({ length: bufferLength }, (_, i) =>
+                (i / bufferLength) * nyquist
+            );
+
+            source.connect(analyser); // Ensure the stream is connected
+            console.log("AudioContext state:", audioContext.state);
+
+            if (audioContext.state === "suspended") {
+                await audioContext.resume();
+                console.log("AudioContext resumed.");
+            }
         } catch (error) {
+            micStatus.textContent = "Microphone access denied.";
             console.error("Microphone access denied or not supported", error);
         }
     };
 
-    // Map dataArray to totalSegments
     const mapToSegments = (dataArray, totalSegments) => {
         const mappedData = [];
-        const step = dataArray.length / totalSegments;
+        const segmentFrequencies = Array.from(
+            { length: totalSegments },
+            (_, i) =>
+                minFreq + (i / (totalSegments - 1)) * (maxFreq - minFreq)
+        );
 
         for (let i = 0; i < totalSegments; i++) {
-            const pos = i * step; // Calculate the exact position in dataArray
-            const lower = Math.floor(pos);
-            const upper = Math.ceil(pos);
-            const weight = pos - lower;
+            const targetFreq = segmentFrequencies[i];
+            const closestIndex = frequencyBins.findIndex((f) => f >= targetFreq);
 
-            // Interpolate between the two closest values
-            const value =
-                (1 - weight) * (dataArray[lower] || 0) + weight * (dataArray[upper] || 0);
-            mappedData.push(value / 255); // Normalize to [0, 1]
+            const amplitude = closestIndex !== -1 ? dataArray[closestIndex] : 0;
+            mappedData.push(amplitude / 255);
         }
 
+        console.log(`Mapped Data:`, mappedData); // Debugging data
         return mappedData;
     };
 
-    // Create line groups for the visualizer
     const createLineGroups = () => {
         const svgNS = "http://www.w3.org/2000/svg";
         const patternGroup = document.getElementById("circle-pattern");
+
+        if (!patternGroup) {
+            console.error("SVG element with ID 'circle-pattern' not found.");
+            return;
+        }
+
         patternGroup.innerHTML = ""; // Clear any existing line groups
 
         for (let i = 0; i < totalSegments; i++) {
@@ -70,23 +103,39 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             patternGroup.appendChild(lineGroup);
         }
+
+        console.log("SVG elements created successfully.");
     };
 
-    // Animate the SVG based on microphone input
+    let lastAmplitudes = Array(totalSegments).fill(0); // Store the previous frame's amplitudes
+
+
+
+    const decayCurve = (amplitude) => {
+        return amplitude * Math.sin(Math.PI / 3.0 * amplitude); // Decay curve
+    };
+
     const animateFrame = () => {
         if (!analyser) return;
 
-        analyser.getByteFrequencyData(dataArray); // Get frequency data
-        const amplitudes = mapToSegments(dataArray, totalSegments); // Map to totalSegments
-        let totalAmplitude = 0; // Variable to calculate average amplitude
+        analyser.getByteFrequencyData(dataArray);
+        const currentAmplitudes = mapToSegments(dataArray, totalSegments);
+
+        let totalAmplitude = 0;
 
         for (let i = 0; i < totalSegments; i++) {
+            let amplitude = currentAmplitudes[i];
+
+            // Apply custom decay curve
+            amplitude = Math.max(currentAmplitudes[i], decayCurve(lastAmplitudes[i]));
+
+            lastAmplitudes[i] = amplitude; // Store updated amplitude
+
             const lineGroup = document.querySelector(`.line-group-${i}`);
             if (!lineGroup) continue;
 
             const dots = lineGroup.querySelectorAll("circle");
-            const amplitude = amplitudes[i] || 0; // Get amplitude for this segment
-            totalAmplitude += amplitude; // Add amplitude to total
+            totalAmplitude += amplitude;
 
             dots.forEach((dot, index) => {
                 const basePosition = baseRadius;
@@ -94,32 +143,32 @@ document.addEventListener("DOMContentLoaded", async () => {
                     basePosition + amplitude * maxAmplitude * (index / dotCount);
                 dot.setAttribute("cy", positionWithPulse);
 
-                // Optional: Add dynamic color effect based on amplitude
-                const hue = 200 + amplitude * 160; // Map amplitude to hue range
+                const hue = 200 + amplitude * 160;
                 const color = `hsl(${hue}, 100%, 50%)`;
                 dot.setAttribute("fill", color);
             });
         }
 
-        // Calculate average amplitude
         const averageAmplitude = totalAmplitude / totalSegments;
 
-        // Update the stroke width of #shadow-svg based on average amplitude
         const shadowSvg = document.getElementById("shadow-svg");
-        const newStrokeWidth = 1 + averageAmplitude * 20; // Base width + amplitude scaling
-        const newOpacity = 0.25 + averageAmplitude * 1.8;
+        if (shadowSvg) {
+            const newStrokeWidth = 1 + averageAmplitude * 20;
+            const newOpacity = 0.25 + averageAmplitude * 1.8;
 
-        shadowSvg.setAttribute("stroke-width", newStrokeWidth);
-        shadowSvg.setAttribute("opacity", newOpacity);
+            shadowSvg.setAttribute("stroke-width", newStrokeWidth);
+            shadowSvg.setAttribute("opacity", newOpacity);
+        }
     };
 
-    // Initialize and start animation
+
+
+
     const startVisualizer = async () => {
         await initializeMicrophone();
         createLineGroups();
         setInterval(animateFrame, interval);
     };
 
-    // Start the visualizer
     startVisualizer();
 });
