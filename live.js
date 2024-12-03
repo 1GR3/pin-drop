@@ -14,28 +14,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     let dataArray;
     let frequencyBins;
 
-    const micStatus = document.createElement("div");
-    micStatus.style.position = "absolute";
-    micStatus.style.top = "10px";
-    micStatus.style.left = "10px";
-    micStatus.style.padding = "10px";
-    micStatus.style.color = "white";
-    micStatus.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    micStatus.style.zIndex = "1000";
-    micStatus.textContent = "Initializing microphone...";
-    document.body.appendChild(micStatus);
+
 
     const initializeMicrophone = async () => {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-            console.log("Media Stream:", stream); // Debugging stream
+            console.log("Media Stream:", stream);
 
-            micStatus.textContent = "Microphone is active.";
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
             const source = audioContext.createMediaStreamSource(stream);
 
             analyser = audioContext.createAnalyser();
             analyser.fftSize = 256;
+            analyser.smoothingTimeConstant = 0.8; // Adjust smoothing to affect reactivity
             const bufferLength = analyser.frequencyBinCount;
             dataArray = new Uint8Array(bufferLength);
 
@@ -44,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 (i / bufferLength) * nyquist
             );
 
-            source.connect(analyser); // Ensure the stream is connected
+            source.connect(analyser);
             console.log("AudioContext state:", audioContext.state);
 
             if (audioContext.state === "suspended") {
@@ -62,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const segmentFrequencies = Array.from(
             { length: totalSegments },
             (_, i) =>
-                minFreq + (i / (totalSegments - 1)) * (maxFreq - minFreq)
+                minFreq + (i / (totalSegments - 1)) * (maxFreq - minFreq) / .75
         );
 
         for (let i = 0; i < totalSegments; i++) {
@@ -73,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             mappedData.push(amplitude / 255);
         }
 
-        console.log(`Mapped Data:`, mappedData); // Debugging data
+        console.log(`Mapped Data:`, mappedData);
         return mappedData;
     };
 
@@ -109,12 +100,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let lastAmplitudes = Array(totalSegments).fill(0); // Store the previous frame's amplitudes
 
-
-
-    const decayCurve = (amplitude) => {
-        return amplitude * Math.sin(Math.PI / 3.0 * amplitude); // Decay curve
-    };
-
     const animateFrame = () => {
         if (!analyser) return;
 
@@ -123,13 +108,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         let totalAmplitude = 0;
 
+        const decayFactor = 0.8; // Faster decay
         for (let i = 0; i < totalSegments; i++) {
-            let amplitude = currentAmplitudes[i];
+            const amplitude = Math.max(
+                currentAmplitudes[i],
+                lastAmplitudes[i] * decayFactor
+            );
 
-            // Apply custom decay curve
-            amplitude = Math.max(currentAmplitudes[i], decayCurve(lastAmplitudes[i]));
-
-            lastAmplitudes[i] = amplitude; // Store updated amplitude
+            lastAmplitudes[i] = amplitude; // Store decayed amplitude
 
             const lineGroup = document.querySelector(`.line-group-${i}`);
             if (!lineGroup) continue;
@@ -149,7 +135,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         }
 
-        const averageAmplitude = totalAmplitude / totalSegments;
+        // Average amplitude calculation with decay
+        const nonZeroAmplitudes = lastAmplitudes.filter((amp) => amp > 0.01);
+        const averageAmplitude =
+            nonZeroAmplitudes.length > 0
+                ? nonZeroAmplitudes.reduce((sum, amp) => sum + amp, 0) /
+                nonZeroAmplitudes.length
+                : 0;
 
         const shadowSvg = document.getElementById("shadow-svg");
         if (shadowSvg) {
@@ -160,9 +152,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             shadowSvg.setAttribute("opacity", newOpacity);
         }
     };
-
-
-
 
     const startVisualizer = async () => {
         await initializeMicrophone();
