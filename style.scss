@@ -56,7 +56,8 @@ $states: (
     homepage: (start: #EC5935, middle: #911C58, rotation: 45deg),
     partner: (start: #F4B53F, middle: #911C58, rotation: 0deg),
     platform: (start: #B1E088, middle: #8FAAE2, rotation: -90deg),
-    solutions: (start: #F4B53F, middle: #EC5935, rotation: 90deg)
+    solutions: (start: #F4B53F, middle: #EC5935, rotation: 90deg),
+    live: (start: #8FAAE2, middle: #911C58, rotation: -45deg)
 );
 
 // Mixin for generating sinusoidal gradients
