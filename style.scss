@@ -77,8 +77,8 @@ $states: (
     platform: (start: #B1E088, middle: #8FAAE2, rotation: -90deg),
     solutions: (start: #F4B53F, middle: #EC5935, rotation: 90deg),
     live1: (start: #EC5935, middle: #911C58, rotation: 45deg),
-    live2: (start: #EC5935, middle: #8FAAE2, rotation: 45deg),
-    live3: (start: #8FAAE2, middle: #911C58, rotation: 45deg),
+    live2: (start: #EC5935, middle: #8FAAE2, rotation: -45deg),
+    live3: (start: #8FAAE2, middle: #911C58, rotation: -20deg),
 );
 
 // Mixin for generating sinusoidal gradients
