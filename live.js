@@ -3,71 +3,110 @@ document.addEventListener("DOMContentLoaded", async () => {
     const dotCount = 11; // Number of dots per line
     const baseRadius = 100; // Minimum distance from center
     const maxAmplitude = 50; // Maximum amplitude for the pulsing effect
-    const frameRate = 12; // Frames per second
-    const interval = 1000 / frameRate; // Interval between frames (ms)
-
     const minFreq = 20; // Minimum frequency (Hz)
     const maxFreq = 12000; // Maximum frequency (Hz)
+    const motionThreshold = 0.05; // Threshold below which motion is suppressed
 
-    let audioContext;
-    let analyser;
-    let dataArray;
-    let frequencyBins;
+    // Set up the Web Audio API to capture microphone input
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const analyser = audioContext.createAnalyser();
+    analyser.fftSize = 256; // Size of the FFT, controls frequency resolution
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
 
+    // Calculate frequency range for each segment
+    const nyquist = audioContext.sampleRate / 2;
+    const frequencyBins = Array.from({ length: bufferLength }, (_, i) => (i / bufferLength) * nyquist);
+    const segmentFrequencies = Array.from(
+        { length: totalSegments },
+        (_, i) => minFreq + (i / (totalSegments - 1)) * (maxFreq - minFreq)
+    );
 
+    // Get microphone access
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const source = audioContext.createMediaStreamSource(stream);
+        source.connect(analyser);
+        audioContext.resume(); // Ensure audio context is active
+    } catch (error) {
+        console.error("Microphone access denied or not available.", error);
+        return;
+    }
 
-    const initializeMicrophone = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-            console.log("Media Stream:", stream);
-
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const source = audioContext.createMediaStreamSource(stream);
-
-            analyser = audioContext.createAnalyser();
-            analyser.fftSize = 256;
-            analyser.smoothingTimeConstant = 0.8; // Adjust smoothing to affect reactivity
-            const bufferLength = analyser.frequencyBinCount;
-            dataArray = new Uint8Array(bufferLength);
-
-            const nyquist = audioContext.sampleRate / 2;
-            frequencyBins = Array.from({ length: bufferLength }, (_, i) =>
-                (i / bufferLength) * nyquist
-            );
-
-            source.connect(analyser);
-            console.log("AudioContext state:", audioContext.state);
-
-            if (audioContext.state === "suspended") {
-                await audioContext.resume();
-                console.log("AudioContext resumed.");
+    // Function to find the closest frequency bin for a given frequency
+    const findClosestFrequencyBin = (targetFreq) => {
+        let closestIndex = 0;
+        let closestDiff = Infinity;
+        for (let i = 0; i < frequencyBins.length; i++) {
+            const diff = Math.abs(frequencyBins[i] - targetFreq);
+            if (diff < closestDiff) {
+                closestDiff = diff;
+                closestIndex = i;
             }
-        } catch (error) {
-            micStatus.textContent = "Microphone access denied.";
-            console.error("Microphone access denied or not supported", error);
         }
+        return closestIndex;
     };
 
-    const mapToSegments = (dataArray, totalSegments) => {
-        const mappedData = [];
-        const segmentFrequencies = Array.from(
-            { length: totalSegments },
-            (_, i) =>
-                minFreq + (i / (totalSegments - 1)) * (maxFreq - minFreq) / .75
-        );
+    // Map the segment frequencies to corresponding frequency bins
+    const segmentFrequencyBins = segmentFrequencies.map((freq) => findClosestFrequencyBin(freq));
+    console.log("Segment Frequency Bins:", segmentFrequencyBins); // Debugging mapping
+
+    // Function to animate SVG segments based on audio frequency data
+    function animatePulseEffect() {
+        analyser.getByteFrequencyData(dataArray); // Get frequency data
+
+        let totalAmplitude = 0;
 
         for (let i = 0; i < totalSegments; i++) {
-            const targetFreq = segmentFrequencies[i];
-            const closestIndex = frequencyBins.findIndex((f) => f >= targetFreq);
+            const lineGroup = document.querySelector(`.line-group-${i}`);
+            if (!lineGroup) {
+                console.warn(`Line group .line-group-${i} not found.`);
+                continue;
+            }
 
-            const amplitude = closestIndex !== -1 ? dataArray[closestIndex] : 0;
-            mappedData.push(amplitude / 255);
+            const dots = lineGroup.querySelectorAll("circle");
+
+            // Get amplitude for the current segment's frequency range
+            const frequencyIndex = segmentFrequencyBins[i];
+            const amplitude = dataArray[frequencyIndex] / 128; // Normalize and scale (0 to ~2)
+
+            // Ignore amplitudes below the threshold
+            const effectiveAmplitude = amplitude > motionThreshold ? amplitude : 0;
+
+            totalAmplitude += effectiveAmplitude;
+
+            dots.forEach((dot, index) => {
+                // Set each dot's position based on effective amplitude
+                const basePosition = baseRadius;
+                const positionWithPulse = basePosition + effectiveAmplitude * maxAmplitude * (index / dotCount);
+                dot.setAttribute("cy", positionWithPulse);
+            });
         }
 
-        console.log(`Mapped Data:`, mappedData);
-        return mappedData;
-    };
+        // Calculate the average amplitude for the shadow effect
+        const averageAmplitude = totalAmplitude / totalSegments;
 
+        // Update the shadow attributes dynamically if above threshold
+        const shadowSvg = document.getElementById("shadow-svg");
+        if (shadowSvg && averageAmplitude > motionThreshold) {
+            const newStrokeWidth = 1 + averageAmplitude * 5; // Base width + amplitude scaling
+            const newOpacity = 0.2 + averageAmplitude * .4; // Adjust opacity
+            // const newYPosition = 170 + averageAmplitude * 30; // Dynamic Y-offset
+
+            shadowSvg.setAttribute("stroke-width", newStrokeWidth);
+            shadowSvg.setAttribute("opacity", newOpacity);
+            // shadowSvg.setAttribute("cy", newYPosition); // Move shadow up/down based on amplitude
+        } else if (shadowSvg) {
+            // Reset shadow to default state if below threshold
+            shadowSvg.setAttribute("stroke-width", 1);
+            shadowSvg.setAttribute("opacity", 0.25);
+            // shadowSvg.setAttribute("cy", 170);
+        }
+
+        requestAnimationFrame(animatePulseEffect);
+    }
+
+    // Initialize SVG line groups
     const createLineGroups = () => {
         const svgNS = "http://www.w3.org/2000/svg";
         const patternGroup = document.getElementById("circle-pattern");
@@ -98,66 +137,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log("SVG elements created successfully.");
     };
 
-    let lastAmplitudes = Array(totalSegments).fill(0); // Store the previous frame's amplitudes
-
-    const animateFrame = () => {
-        if (!analyser) return;
-
-        analyser.getByteFrequencyData(dataArray);
-        const currentAmplitudes = mapToSegments(dataArray, totalSegments);
-
-        let totalAmplitude = 0;
-
-        const decayFactor = 0.8; // Faster decay
-        for (let i = 0; i < totalSegments; i++) {
-            const amplitude = Math.max(
-                currentAmplitudes[i],
-                lastAmplitudes[i] * decayFactor
-            );
-
-            lastAmplitudes[i] = amplitude; // Store decayed amplitude
-
-            const lineGroup = document.querySelector(`.line-group-${i}`);
-            if (!lineGroup) continue;
-
-            const dots = lineGroup.querySelectorAll("circle");
-            totalAmplitude += amplitude;
-
-            dots.forEach((dot, index) => {
-                const basePosition = baseRadius;
-                const positionWithPulse =
-                    basePosition + amplitude * maxAmplitude * (index / dotCount);
-                dot.setAttribute("cy", positionWithPulse);
-
-                const hue = 200 + amplitude * 160;
-                const color = `hsl(${hue}, 100%, 50%)`;
-                dot.setAttribute("fill", color);
-            });
-        }
-
-        // Average amplitude calculation with decay
-        const nonZeroAmplitudes = lastAmplitudes.filter((amp) => amp > 0.01);
-        const averageAmplitude =
-            nonZeroAmplitudes.length > 0
-                ? nonZeroAmplitudes.reduce((sum, amp) => sum + amp, 0) /
-                nonZeroAmplitudes.length
-                : 0;
-
-        const shadowSvg = document.getElementById("shadow-svg");
-        if (shadowSvg) {
-            const newStrokeWidth = 1 + averageAmplitude * 20;
-            const newOpacity = 0.25 + averageAmplitude * 1.8;
-
-            shadowSvg.setAttribute("stroke-width", newStrokeWidth);
-            shadowSvg.setAttribute("opacity", newOpacity);
-        }
-    };
-
-    const startVisualizer = async () => {
-        await initializeMicrophone();
-        createLineGroups();
-        setInterval(animateFrame, interval);
-    };
-
-    startVisualizer();
+    createLineGroups(); // Initialize SVG structure
+    animatePulseEffect(); // Start the animation loop
 });
