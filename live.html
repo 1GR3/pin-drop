@@ -9,12 +9,15 @@
 </head>
 
 <body>
-
-    <div class="container" id="live">
+    <div class="controls">
+        <button id="prev-btn">«</button>
+        <button id="next-btn">»</button>
+    </div>
+    <div class="container" id="live1">
         <svg id="circle-svg" preserveAspectRatio="xMidYMid meet" viewBox="-200 -200 400 400">
             <defs>
                 <filter id="blur-filter" x="-100%" y="-100%" width="300%" height="300%">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
                 </filter>
             </defs>
             <!-- Group of lines to create the circular shape -->
@@ -22,9 +25,9 @@
                 <!-- JavaScript will create the line groups with unique class names -->
 
             </g>
-            <ellipse id="shadow-svg" cx="0" cy="170" rx="105" ry="6" fill="none" filter="url(#blur-filter)" />
+            <ellipse id="shadow-svg" cx="0" cy="720" rx="105" ry="14" fill="none" filter="url(#blur-filter)" />
         </svg>
-
+        <img class="logo" src="/logo.svg" />
     </div>
     <script src="live.js"></script>
 </body>

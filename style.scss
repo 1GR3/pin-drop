@@ -44,6 +44,25 @@ body {
 
         #shadow-svg {
             stroke: white;
+            transform: scaleY(.25);
+        }
+
+        .logo {
+            //width: 50vw;
+            max-height: 20vh;
+            max-width: 46vw;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        &#live2,
+        &#live3 {
+            .logo {
+                filter: grayscale(100%) brightness(200%);
+            }
         }
     }
 }
@@ -57,7 +76,9 @@ $states: (
     partner: (start: #F4B53F, middle: #911C58, rotation: 0deg),
     platform: (start: #B1E088, middle: #8FAAE2, rotation: -90deg),
     solutions: (start: #F4B53F, middle: #EC5935, rotation: 90deg),
-    live: (start: #8FAAE2, middle: #911C58, rotation: -45deg)
+    live1: (start: #EC5935, middle: #911C58, rotation: 45deg),
+    live2: (start: #EC5935, middle: #8FAAE2, rotation: 45deg),
+    live3: (start: #8FAAE2, middle: #911C58, rotation: 45deg),
 );
 
 // Mixin for generating sinusoidal gradients

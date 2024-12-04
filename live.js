@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const maxFreq = 12000; // Maximum frequency (Hz)
     const motionThreshold = 0.05; // Threshold below which motion is suppressed
 
+    const ids = ["live1", "live2", "live3"]; // IDs to toggle
+    let currentIdIndex = 0;
+
     // Set up the Web Audio API to capture microphone input
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const analyser = audioContext.createAnalyser();
@@ -89,18 +92,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Update the shadow attributes dynamically if above threshold
         const shadowSvg = document.getElementById("shadow-svg");
         if (shadowSvg && averageAmplitude > motionThreshold) {
-            const newStrokeWidth = 1 + averageAmplitude * 5; // Base width + amplitude scaling
-            const newOpacity = 0.2 + averageAmplitude * .4; // Adjust opacity
-            // const newYPosition = 170 + averageAmplitude * 30; // Dynamic Y-offset
+            const newStrokeWidth = 2 + averageAmplitude * 12; // Base width + amplitude scaling
+            const newOpacity = 0.4 + averageAmplitude * 0.3; // Adjust opacity
 
             shadowSvg.setAttribute("stroke-width", newStrokeWidth);
             shadowSvg.setAttribute("opacity", newOpacity);
-            // shadowSvg.setAttribute("cy", newYPosition); // Move shadow up/down based on amplitude
         } else if (shadowSvg) {
             // Reset shadow to default state if below threshold
-            shadowSvg.setAttribute("stroke-width", 1);
+            shadowSvg.setAttribute("stroke-width", 2);
             shadowSvg.setAttribute("opacity", 0.25);
-            // shadowSvg.setAttribute("cy", 170);
         }
 
         requestAnimationFrame(animatePulseEffect);
@@ -137,6 +137,25 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log("SVG elements created successfully.");
     };
 
+    // Add event listeners for the existing controls
+    const addEventListeners = () => {
+        const prevButton = document.getElementById("prev-btn");
+        const nextButton = document.getElementById("next-btn");
+
+        prevButton.addEventListener("click", () => {
+            currentIdIndex = (currentIdIndex - 1 + ids.length) % ids.length;
+            document.querySelector(".container").id = ids[currentIdIndex];
+            console.log(`Switched to ID: ${ids[currentIdIndex]}`);
+        });
+
+        nextButton.addEventListener("click", () => {
+            currentIdIndex = (currentIdIndex + 1) % ids.length;
+            document.querySelector(".container").id = ids[currentIdIndex];
+            console.log(`Switched to ID: ${ids[currentIdIndex]}`);
+        });
+    };
+
+    addEventListeners(); // Add event listeners to controls
     createLineGroups(); // Initialize SVG structure
     animatePulseEffect(); // Start the animation loop
 });
