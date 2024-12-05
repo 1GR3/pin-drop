@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const frameRate = 12; // Frames per second
     const interval = 1000 / frameRate; // Interval between frames (ms)
 
-    const states = ["company", "homepage", "partner", "platform", "solutions"];
+    // Define extended states
+    const baseStates = ["company", "homepage", "partner", "platform", "solutions"];
+    const variations = ["var1", "var2", "var3"];
+    const states = baseStates.flatMap((state) => [state, ...variations]); // Add variations after each base state
     let currentStateIndex = 0;
+
     let frames = []; // Placeholder for loaded frames
     let currentFrame = 0;
 
@@ -79,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Update the stroke width of #shadow-svg based on average amplitude
         const shadowSvg = document.getElementById("shadow-svg");
         const newStrokeWidth = 1 + averageAmplitude * 5; // Base width + amplitude scaling
-        const newOpacity = .2 + averageAmplitude * .4;
+        const newOpacity = 0.2 + averageAmplitude * 0.4;
 
         shadowSvg.setAttribute("stroke-width", newStrokeWidth);
         shadowSvg.setAttribute("opacity", newOpacity);
@@ -105,8 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     document.getElementById("prev-btn").addEventListener("click", async () => {
-        currentStateIndex =
-            (currentStateIndex - 1 + states.length) % states.length;
+        currentStateIndex = (currentStateIndex - 1 + states.length) % states.length;
         await updateState();
     });
 
