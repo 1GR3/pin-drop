@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const maxFreq = 12000; // Maximum frequency (Hz)
     const motionThreshold = 0.05; // Threshold below which motion is suppressed
 
-    const ids = ["live1", "live2", "live3"]; // IDs to toggle
+    const ids = ["live1", "live2", "live3", "live4"]; // IDs to toggle
     let currentIdIndex = 0;
 
     // Set up the Web Audio API to capture microphone input
@@ -141,6 +141,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const addEventListeners = () => {
         const prevButton = document.getElementById("prev-btn");
         const nextButton = document.getElementById("next-btn");
+        console.log(ids.length);
 
         prevButton.addEventListener("click", () => {
             currentIdIndex = (currentIdIndex - 1 + ids.length) % ids.length;

@@ -64,8 +64,25 @@ body {
                 filter: grayscale(100%) brightness(200%);
             }
         }
+
+        &#var1,
+        &#var2,
+        &#var3 {
+            #shadow-svg {
+                display: none;
+            }
+        }
+
+        &#var1 {
+            background-color: white;
+        }
+
+        &#var2 {
+            background-color: #6a6766;
+        }
     }
 }
+
 
 // Define total segments and color pairs for states
 $segment-count: 180;
@@ -77,8 +94,12 @@ $states: (
     platform: (start: #B1E088, middle: #8FAAE2, rotation: -90deg),
     solutions: (start: #F4B53F, middle: #EC5935, rotation: 90deg),
     live1: (start: #EC5935, middle: #911C58, rotation: 45deg),
-    live2: (start: #EC5935, middle: #8FAAE2, rotation: -45deg),
-    live3: (start: #8FAAE2, middle: #911C58, rotation: -20deg),
+    live2: (start: #B1E088, middle: #8FAAE2, rotation: -90deg),
+    live3: (start: #F4B53F, middle: #911C58, rotation: 0deg),
+    live4: (start: #F4B53F, middle: #EC5935, rotation: 90deg),
+    var1: (start: #c7c7cc, middle: #bcb4b1, rotation: -20deg),
+    var2: (start: #FFFFFF, middle: #e0e0e0, rotation: -20deg),
+    var3: (start: #FFFFFF, middle: #d8dee3, rotation: -20deg),
 );
 
 // Mixin for generating sinusoidal gradients
