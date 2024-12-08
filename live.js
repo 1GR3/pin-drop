@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Update the shadow attributes dynamically if above threshold
         const shadowSvg = document.getElementById("shadow-svg");
         if (shadowSvg && averageAmplitude > motionThreshold) {
-            const newStrokeWidth = 2 + averageAmplitude * 12; // Base width + amplitude scaling
-            const newOpacity = 0.4 + averageAmplitude * 0.3; // Adjust opacity
+            const newStrokeWidth = 1 + averageAmplitude * 8; // Base width + amplitude scaling
+            const newOpacity = 0.3 + averageAmplitude * 0.6;
 
             shadowSvg.setAttribute("stroke-width", newStrokeWidth);
             shadowSvg.setAttribute("opacity", newOpacity);
